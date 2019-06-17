@@ -5,6 +5,7 @@ class ShoutsController < ApplicationController
 
   def show
     @shout = Shout.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -25,10 +26,15 @@ class ShoutsController < ApplicationController
 
   def like
     @shout = Shout.find(params[:id])
-    @user = User.all.first ###### change to session ID
-    byebug
-    Like.create(shout_id: @shout.id, user_id: @user.id)
-    render :show
+    Like.create(likeable: @shout, user_id: session[:user_id])
+    redirect_to shout_path(@shout)
+  end
+
+  def unlike
+    @shout = Shout.find(params[:id])
+    like = @shout.likes.find_by(user_id: session[:user_id])
+    like.destroy
+    redirect_to shout_path(@shout)
   end
 
   private

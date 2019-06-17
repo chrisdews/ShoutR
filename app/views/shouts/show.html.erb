@@ -1,23 +1,36 @@
 <h1>Shout</h1>
 <%= @shout.user.username %> <br>
 <%= @shout.text %>
-<h4>Number of likes: <%= @shout.likes.count %> </h4>
+<h4>Number of likes: <%= @shout.likes.count %>
+<% if @shout.has_like?(@user) %>
+<%= form_for @shout, url: unlike_shout_path(@shout) do |f| %>
+<%= f.submit "Unlike" %>
+<% end %>
+<% else %>
+<%= form_for @shout, url: like_shout_path(@shout) do |f| %>
+<%= f.submit "Like" %>
+<% end %>
+<% end %> </h4>
 
 
 <h2>Comments</h2>
 <% @shout.comments.each do |comment| %>
-<div>
+<h5>
 <%= comment.user.username %> <br>
 <%= comment.text %>
-</div>
+<h4>Number of likes: <%= comment.likes.count %>
+<% if comment.has_like?(@user) %>
+<%= form_for comment, url: unlike_comment_path(comment) do |f| %>
+<%= f.submit "Unlike" %>
+<% end %>
+<% else %>
+<%= form_for comment, url: like_comment_path(comment) do |f| %>
+<%= f.submit "Like" %>
+<% end %></h5>
+<% end %>
 <% end %>
 
-<%= form_for @shout, url: like_shout_path(@shout) do |f| %>
-<%= f.submit "Like" %>
-<% end %>
 
 <%= form_for(@shout, :html => { :method => :delete, :remote => true }) do |f| %>
-<%= f.submit "Delete" %>
+<%= f.submit "Delete Post" %>
 <% end %>
-
-<%= link_to "All shouts", shouts_path %>

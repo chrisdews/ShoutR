@@ -2,4 +2,8 @@ class User < ApplicationRecord
     has_many :shouts
     has_many :likes, through: :shouts
     has_many :comments, through: :shouts
+
+    validates :name, presence: true
+    validates :name, uniqueness: true
+    has_secure_password
 end

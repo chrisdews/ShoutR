@@ -8,11 +8,10 @@ class SessionsController < ApplicationController
     # byebug
     if !user || !user.authenticate(params[:password])
       flash[:errors] = ["Credentials aren't valid"]
-      # redirect_to new_session_path
+      render 'new'
     else
       session[:user_id] = user.id
-      # redirect_to new_user_path
-      # not configured yet
+      redirect_to shouts_path
     end
 
   end

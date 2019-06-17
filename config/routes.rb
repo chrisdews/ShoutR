@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'users#new'
+  root to: 'sessions#new'
 
   get 'sessions/new'
   get 'login', to: 'sessions#new', as: :login

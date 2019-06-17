@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   resources :comments  do
       patch "like", on: :member
   end
+
   resources :likes
-  resources :shouts
+  resources :shouts  do
+      patch "like", on: :member
+  end
   resources :users
 end

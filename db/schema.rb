@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_06_17_101342) do
-
+ActiveRecord::Schema.define(version: 2019_06_14_150056) do
 
   create_table "comments", force: :cascade do |t|
     t.string "text"
     t.integer "shout_id"
+    t.integer "comments_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.index ["comments_id"], name: "index_comments_on_comments_id"
     t.index ["shout_id"], name: "index_comments_on_shout_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -27,8 +27,11 @@ ActiveRecord::Schema.define(version: 2019_06_17_101342) do
   create_table "likes", force: :cascade do |t|
     t.integer "shout_id"
     t.integer "user_id"
+    t.string "likeobject_type"
+    t.integer "likeobject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["likeobject_type", "likeobject_id"], name: "index_likes_on_likeobject_type_and_likeobject_id"
     t.index ["shout_id"], name: "index_likes_on_shout_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end

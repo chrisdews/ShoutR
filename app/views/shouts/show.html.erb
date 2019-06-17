@@ -1,6 +1,8 @@
 <h1>Shout</h1>
 <%= @shout.user.username %> <br>
 <%= @shout.text %>
+<h4>Number of likes: <%= @shout.likes.count %> </h4>
+
 
 <h2>Comments</h2>
 <% @shout.comments.each do |comment| %>

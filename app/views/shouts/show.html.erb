@@ -1,6 +1,8 @@
 <h1>Shout</h1>
 <%= @shout.user.username %> <br>
 <%= @shout.text %>
+<h4>Number of likes: <%= @shout.likes.count %> </h4>
+
 
 <h2>Comments</h2>
 <% @shout.comments.each do |comment| %>
@@ -9,3 +11,13 @@
 <%= comment.text %>
 </div>
 <% end %>
+
+<%= form_for @shout, url: like_shout_path(@shout) do |f| %>
+<%= f.submit "Like" %>
+<% end %>
+
+<%= form_for(@shout, :html => { :method => :delete, :remote => true }) do |f| %>
+<%= f.submit "Delete" %>
+<% end %>
+
+<%= link_to "All shouts", shouts_path %>

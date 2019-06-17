@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'sessions/destroy', as: :logout
   get 'signup', to: 'users#new', as: :signup
 
-  resources :comments
+
+  resources :comments  do
+      patch "like", on: :member
+  end
   resources :likes
   resources :shouts
   resources :users

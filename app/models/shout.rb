@@ -1,5 +1,4 @@
 class Shout < ApplicationRecord
+  has_many :likes, as: :likeobject
   belongs_to :user
-  has_many :likes
-  has_many :comments
 end

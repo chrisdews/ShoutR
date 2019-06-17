@@ -1,0 +1,11 @@
+<h1>Shout</h1>
+<%= @shout.user.username %> <br>
+<%= @shout.text %>
+
+<h2>Comments</h2>
+<% @shout.comments.each do |comment| %>
+<div>
+<%= comment.user.username %> <br>
+<%= comment.text %>
+</div>
+<% end %>

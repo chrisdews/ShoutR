@@ -1,0 +1,9 @@
+rails g resource User name:string password:string date_of_birth:date email:string 
+
+rails g resource Shout text:string user:references 
+
+rails g resource Like  shout:references user:references
+
+rails g resource Comment text:string shout:references
+
+

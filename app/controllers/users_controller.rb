@@ -6,12 +6,12 @@ class UsersController < ApplicationController
     def create
         # byebug
         user = User.create(user_params)
+        # byebug
         if user.valid?
-            # redirect_to new_user_path 
-            # not configured yet
+            redirect_to login_path 
         else
             flash[:errors] = user.errors.full_messages
-            # redirect_to new_user_path
+            render 'new'
             # not configured yet
         end
     end
@@ -19,6 +19,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:username, :password, :email, :date_of_birth)
     end
 end

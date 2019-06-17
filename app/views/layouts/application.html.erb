@@ -4,16 +4,34 @@
     <title>ShoutR</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
   </head>
 
   <body>
+    <nav>
+        <div class="container">
+          <div class="float-left is-size-1"><h5 style="margin-bottom: 0;">ShoutR</h5>
+          </div>
+          <% if logged_in? %>
+             <div class="float-right"><h3 style="margin-bottom: 0;"><%= link_to 'Log out', logout_path %></h3>
+             </div>
+          <% end %>
+        </div>
+    </nav>
+
     
-    <%= yield %>
+      <%= yield %>
+    
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+      <p>
+      <strong>ShoutR</strong> by Felix & Chris
+      </p>
+      </div>
+    </footer>
+
   </body>
 </html>

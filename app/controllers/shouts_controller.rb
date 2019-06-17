@@ -25,9 +25,7 @@ class ShoutsController < ApplicationController
 
   def like
     @shout = Shout.find(params[:id])
-    @user = User.all.first ###### change to session ID
-    byebug
-    Like.create(shout_id: @shout.id, user_id: @user.id)
+    Like.create(likeable: @shout, user_id: 1) ### change to User ID!!!!! ###
     render :show
   end
 

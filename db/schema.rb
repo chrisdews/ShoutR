@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 2019_06_17_101342) do
-=======
-ActiveRecord::Schema.define(version: 2019_06_17_090800) do
->>>>>>> dev
+
 
   create_table "comments", force: :cascade do |t|
     t.string "text"

@@ -14512,3 +14512,2256 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:17
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "shout_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_shout_id" ON "comments" ("shout_id")[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "shout_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_shout_id" ON "likes" ("shout_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "shouts"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "shouts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_shouts_on_user_id" ON "shouts" ("user_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password" varchar, "date_of_birth" date, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:14
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190617101342)[0m
+  ↳ db/schema.rb:14
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190614150052),
+(20190614150053),
+(20190614150056),
+(20190614150054);
+
+[0m
+  ↳ db/schema.rb:14
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:14
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:14
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-17 10:51:04.230542"], ["updated_at", "2019-06-17 10:51:04.230542"]]
+  ↳ db/schema.rb:14
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:14
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "shout_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_shout_id" ON "comments" ("shout_id")[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "likes"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "shout_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_shout_id" ON "likes" ("shout_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "shouts"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "shouts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_shouts_on_user_id" ON "shouts" ("user_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password" varchar, "date_of_birth" date, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:14
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190617101342)[0m
+  ↳ db/schema.rb:14
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190614150052),
+(20190614150053),
+(20190614150056),
+(20190614150054);
+
+[0m
+  ↳ db/schema.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:14
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:14
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-17 10:51:04.260951"], ["updated_at", "2019-06-17 10:51:04.260951"]]
+  ↳ db/schema.rb:14
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:14
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-06-17 10:51:04.264506"], ["key", "environment"]]
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Felix/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "johnny"], ["password", "0sPwIjE"], ["date_of_birth", "1988-05-09"], ["email", "dee@nader.name"], ["created_at", "2019-06-17 10:51:04.345625"], ["updated_at", "2019-06-17 10:51:04.345625"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "antwan"], ["password", "RaRv29Bv"], ["date_of_birth", "1955-07-14"], ["email", "groverblock@shanahan.co"], ["created_at", "2019-06-17 10:51:04.350694"], ["updated_at", "2019-06-17 10:51:04.350694"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "carmelo"], ["password", "WhZwP"], ["date_of_birth", "1992-01-23"], ["email", "rosiehuel@darebeier.info"], ["created_at", "2019-06-17 10:51:04.353512"], ["updated_at", "2019-06-17 10:51:04.353512"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "dallas"], ["password", "Pm77I"], ["date_of_birth", "1980-01-07"], ["email", "salvatore@mueller.org"], ["created_at", "2019-06-17 10:51:04.384346"], ["updated_at", "2019-06-17 10:51:04.384346"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "marlin"], ["password", "8eBzG6Dc3w"], ["date_of_birth", "1969-10-06"], ["email", "adrian@douglas.com"], ["created_at", "2019-06-17 10:51:04.389546"], ["updated_at", "2019-06-17 10:51:04.389546"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "walton"], ["password", "RiQlP3Go8"], ["date_of_birth", "1964-02-17"], ["email", "carlosharvey@bednar.com"], ["created_at", "2019-06-17 10:51:04.394301"], ["updated_at", "2019-06-17 10:51:04.394301"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "sarah_la"], ["password", "I3Jl234oC"], ["date_of_birth", "1983-02-24"], ["email", "graig@sawayndamore.co"], ["created_at", "2019-06-17 10:51:04.398415"], ["updated_at", "2019-06-17 10:51:04.398415"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "regenia_"], ["password", "I7Uu6"], ["date_of_birth", "1978-05-28"], ["email", "carlosbartell@oberbrunner.name"], ["created_at", "2019-06-17 10:51:04.401958"], ["updated_at", "2019-06-17 10:51:04.401958"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "victor"], ["password", "K4Pc0fAe"], ["date_of_birth", "1967-11-28"], ["email", "agustin@gislason.io"], ["created_at", "2019-06-17 10:51:04.404951"], ["updated_at", "2019-06-17 10:51:04.404951"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "frances"], ["password", "VrSvV29v"], ["date_of_birth", "1964-11-15"], ["email", "shondra@greenfelder.org"], ["created_at", "2019-06-17 10:51:04.408644"], ["updated_at", "2019-06-17 10:51:04.408644"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "arlinda"], ["password", "QoH7UfZ3"], ["date_of_birth", "1974-10-07"], ["email", "theolasanford@bednar.info"], ["created_at", "2019-06-17 10:51:04.411646"], ["updated_at", "2019-06-17 10:51:04.411646"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "epifania"], ["password", "Xl7m0f2m"], ["date_of_birth", "1980-04-21"], ["email", "sachikotowne@lesch.name"], ["created_at", "2019-06-17 10:51:04.414402"], ["updated_at", "2019-06-17 10:51:04.414402"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "taylor"], ["password", "71Y0Ha"], ["date_of_birth", "1960-11-04"], ["email", "cecily@lockmanrippin.com"], ["created_at", "2019-06-17 10:51:04.417216"], ["updated_at", "2019-06-17 10:51:04.417216"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "clifford"], ["password", "Yf7zY"], ["date_of_birth", "1975-09-30"], ["email", "allisonfritsch@kautzer.co"], ["created_at", "2019-06-17 10:51:04.419586"], ["updated_at", "2019-06-17 10:51:04.419586"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "carmelo"], ["password", "ZgMoBp4"], ["date_of_birth", "1957-08-13"], ["email", "maritabarrows@wehner.net"], ["created_at", "2019-06-17 10:51:04.422635"], ["updated_at", "2019-06-17 10:51:04.422635"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "blanch"], ["password", "S9KaWy11H"], ["date_of_birth", "1959-05-12"], ["email", "wynona@smitham.info"], ["created_at", "2019-06-17 10:51:04.425562"], ["updated_at", "2019-06-17 10:51:04.425562"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "alberto"], ["password", "McV5La0b"], ["date_of_birth", "1954-07-22"], ["email", "shizukopadberg@kuhlmanhammes.net"], ["created_at", "2019-06-17 10:51:04.428046"], ["updated_at", "2019-06-17 10:51:04.428046"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "candelar"], ["password", "V0545oD5A"], ["date_of_birth", "1989-07-07"], ["email", "wesleytillman@parker.info"], ["created_at", "2019-06-17 10:51:04.431556"], ["updated_at", "2019-06-17 10:51:04.431556"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "buford"], ["password", "OpVdNv"], ["date_of_birth", "1973-05-13"], ["email", "jimmie@weimann.com"], ["created_at", "2019-06-17 10:51:04.435008"], ["updated_at", "2019-06-17 10:51:04.435008"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "date_of_birth", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "jackie"], ["password", "85O9Ka"], ["date_of_birth", "1986-11-15"], ["email", "margorie@swaniawski.com"], ["created_at", "2019-06-17 10:51:04.437648"], ["updated_at", "2019-06-17 10:51:04.437648"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Happy."], ["user_id", 16], ["created_at", "2019-06-17 10:51:04.474453"], ["updated_at", "2019-06-17 10:51:04.474453"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.4ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Hurrah for anarchy! This is the happiest moment of my life."], ["user_id", 20], ["created_at", "2019-06-17 10:51:04.477292"], ["updated_at", "2019-06-17 10:51:04.477292"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Yes, it's tough, but not as tough as doing comedy."], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.480158"], ["updated_at", "2019-06-17 10:51:04.480158"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Yes, it's tough, but not as tough as doing comedy."], ["user_id", 17], ["created_at", "2019-06-17 10:51:04.482555"], ["updated_at", "2019-06-17 10:51:04.482555"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "It's stopped."], ["user_id", 7], ["created_at", "2019-06-17 10:51:04.484891"], ["updated_at", "2019-06-17 10:51:04.484891"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I love you."], ["user_id", 20], ["created_at", "2019-06-17 10:51:04.487319"], ["updated_at", "2019-06-17 10:51:04.487319"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "No comment."], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.489832"], ["updated_at", "2019-06-17 10:51:04.489832"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "All my possessions for a moment of time."], ["user_id", 15], ["created_at", "2019-06-17 10:51:04.492149"], ["updated_at", "2019-06-17 10:51:04.492149"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Hurrah for anarchy! This is the happiest moment of my life."], ["user_id", 9], ["created_at", "2019-06-17 10:51:04.494531"], ["updated_at", "2019-06-17 10:51:04.494531"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I don't think they even heard me."], ["user_id", 10], ["created_at", "2019-06-17 10:51:04.497066"], ["updated_at", "2019-06-17 10:51:04.497066"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I don't know."], ["user_id", 18], ["created_at", "2019-06-17 10:51:04.500949"], ["updated_at", "2019-06-17 10:51:04.500949"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["user_id", 13], ["created_at", "2019-06-17 10:51:04.504550"], ["updated_at", "2019-06-17 10:51:04.504550"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I'll be in Hell before you start breakfast! Let her rip!"], ["user_id", 2], ["created_at", "2019-06-17 10:51:04.507938"], ["updated_at", "2019-06-17 10:51:04.507938"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I regret that I should leave this world without again beholding him."], ["user_id", 18], ["created_at", "2019-06-17 10:51:04.510722"], ["updated_at", "2019-06-17 10:51:04.510722"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I regret that I should leave this world without again beholding him."], ["user_id", 5], ["created_at", "2019-06-17 10:51:04.513158"], ["updated_at", "2019-06-17 10:51:04.513158"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Okay, I won't."], ["user_id", 9], ["created_at", "2019-06-17 10:51:04.515558"], ["updated_at", "2019-06-17 10:51:04.515558"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "That's good. Go on, read some more."], ["user_id", 18], ["created_at", "2019-06-17 10:51:04.517920"], ["updated_at", "2019-06-17 10:51:04.517920"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Hurrah for anarchy! This is the happiest moment of my life."], ["user_id", 13], ["created_at", "2019-06-17 10:51:04.520368"], ["updated_at", "2019-06-17 10:51:04.520368"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["user_id", 19], ["created_at", "2019-06-17 10:51:04.522607"], ["updated_at", "2019-06-17 10:51:04.522607"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "That was the best ice-cream soda I ever tasted."], ["user_id", 3], ["created_at", "2019-06-17 10:51:04.524904"], ["updated_at", "2019-06-17 10:51:04.524904"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "All my possessions for a moment of time."], ["user_id", 3], ["created_at", "2019-06-17 10:51:04.527253"], ["updated_at", "2019-06-17 10:51:04.527253"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I love you."], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.529504"], ["updated_at", "2019-06-17 10:51:04.529504"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Goodnight, my darlings, I'll see you tomorrow."], ["user_id", 19], ["created_at", "2019-06-17 10:51:04.532809"], ["updated_at", "2019-06-17 10:51:04.532809"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Is it not meningitis?"], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.535871"], ["updated_at", "2019-06-17 10:51:04.535871"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Does nobody understand?"], ["user_id", 3], ["created_at", "2019-06-17 10:51:04.540378"], ["updated_at", "2019-06-17 10:51:04.540378"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Strike the tent."], ["user_id", 12], ["created_at", "2019-06-17 10:51:04.545299"], ["updated_at", "2019-06-17 10:51:04.545299"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (1.4ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["user_id", 8], ["created_at", "2019-06-17 10:51:04.550687"], ["updated_at", "2019-06-17 10:51:04.550687"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.5ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Do you want me to come with you?"], ["user_id", 12], ["created_at", "2019-06-17 10:51:04.557310"], ["updated_at", "2019-06-17 10:51:04.557310"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Yes, it's tough, but not as tough as doing comedy."], ["user_id", 20], ["created_at", "2019-06-17 10:51:04.563051"], ["updated_at", "2019-06-17 10:51:04.563051"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.4ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "That was the best ice-cream soda I ever tasted."], ["user_id", 14], ["created_at", "2019-06-17 10:51:04.568424"], ["updated_at", "2019-06-17 10:51:04.568424"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.4ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["user_id", 7], ["created_at", "2019-06-17 10:51:04.571978"], ["updated_at", "2019-06-17 10:51:04.571978"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "All my possessions for a moment of time."], ["user_id", 8], ["created_at", "2019-06-17 10:51:04.574785"], ["updated_at", "2019-06-17 10:51:04.574785"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I love you too, honey. Good luck with your show."], ["user_id", 19], ["created_at", "2019-06-17 10:51:04.577807"], ["updated_at", "2019-06-17 10:51:04.577807"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I want to go home."], ["user_id", 19], ["created_at", "2019-06-17 10:51:04.580749"], ["updated_at", "2019-06-17 10:51:04.580749"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Tape Seinfeld for me."], ["user_id", 5], ["created_at", "2019-06-17 10:51:04.583984"], ["updated_at", "2019-06-17 10:51:04.583984"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Tape Seinfeld for me."], ["user_id", 14], ["created_at", "2019-06-17 10:51:04.586802"], ["updated_at", "2019-06-17 10:51:04.586802"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["user_id", 16], ["created_at", "2019-06-17 10:51:04.590179"], ["updated_at", "2019-06-17 10:51:04.590179"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I went the distance."], ["user_id", 15], ["created_at", "2019-06-17 10:51:04.593061"], ["updated_at", "2019-06-17 10:51:04.593061"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "That was the best ice-cream soda I ever tasted."], ["user_id", 1], ["created_at", "2019-06-17 10:51:04.595703"], ["updated_at", "2019-06-17 10:51:04.595703"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I don't think they even heard me."], ["user_id", 18], ["created_at", "2019-06-17 10:51:04.599503"], ["updated_at", "2019-06-17 10:51:04.599503"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Goodnight, my darlings, I'll see you tomorrow."], ["user_id", 7], ["created_at", "2019-06-17 10:51:04.603770"], ["updated_at", "2019-06-17 10:51:04.603770"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I love you."], ["user_id", 14], ["created_at", "2019-06-17 10:51:04.607509"], ["updated_at", "2019-06-17 10:51:04.607509"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Okay, I won't."], ["user_id", 12], ["created_at", "2019-06-17 10:51:04.610193"], ["updated_at", "2019-06-17 10:51:04.610193"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Does nobody understand?"], ["user_id", 18], ["created_at", "2019-06-17 10:51:04.617236"], ["updated_at", "2019-06-17 10:51:04.617236"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Okay, I won't."], ["user_id", 16], ["created_at", "2019-06-17 10:51:04.620532"], ["updated_at", "2019-06-17 10:51:04.620532"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (1.4ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "One! Two! Three!"], ["user_id", 17], ["created_at", "2019-06-17 10:51:04.625366"], ["updated_at", "2019-06-17 10:51:04.625366"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Is it not meningitis?"], ["user_id", 8], ["created_at", "2019-06-17 10:51:04.630049"], ["updated_at", "2019-06-17 10:51:04.630049"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.3ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "All my possessions for a moment of time."], ["user_id", 4], ["created_at", "2019-06-17 10:51:04.653317"], ["updated_at", "2019-06-17 10:51:04.653317"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.4ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Happy."], ["user_id", 3], ["created_at", "2019-06-17 10:51:04.656355"], ["updated_at", "2019-06-17 10:51:04.656355"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mShout Create (0.4ms)[0m  [1m[32mINSERT INTO "shouts" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "One! Two! Three!"], ["user_id", 9], ["created_at", "2019-06-17 10:51:04.659544"], ["updated_at", "2019-06-17 10:51:04.659544"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.2ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["shout_id", 44], ["created_at", "2019-06-17 10:51:04.671287"], ["updated_at", "2019-06-17 10:51:04.671287"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 42], ["user_id", 12], ["created_at", "2019-06-17 10:51:04.681767"], ["updated_at", "2019-06-17 10:51:04.681767"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "That was the best ice-cream soda I ever tasted."], ["shout_id", 11], ["created_at", "2019-06-17 10:51:04.685226"], ["updated_at", "2019-06-17 10:51:04.685226"], ["user_id", 18]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 34], ["user_id", 7], ["created_at", "2019-06-17 10:51:04.688281"], ["updated_at", "2019-06-17 10:51:04.688281"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "All my possessions for a moment of time."], ["shout_id", 23], ["created_at", "2019-06-17 10:51:04.691044"], ["updated_at", "2019-06-17 10:51:04.691044"], ["user_id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 17], ["user_id", 1], ["created_at", "2019-06-17 10:51:04.693920"], ["updated_at", "2019-06-17 10:51:04.693920"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "That was the best ice-cream soda I ever tasted."], ["shout_id", 27], ["created_at", "2019-06-17 10:51:04.696589"], ["updated_at", "2019-06-17 10:51:04.696589"], ["user_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 5], ["user_id", 15], ["created_at", "2019-06-17 10:51:04.700627"], ["updated_at", "2019-06-17 10:51:04.700627"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "That's good. Go on, read some more."], ["shout_id", 31], ["created_at", "2019-06-17 10:51:04.704787"], ["updated_at", "2019-06-17 10:51:04.704787"], ["user_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 8], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.708993"], ["updated_at", "2019-06-17 10:51:04.708993"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Van Halen!"], ["shout_id", 13], ["created_at", "2019-06-17 10:51:04.711946"], ["updated_at", "2019-06-17 10:51:04.711946"], ["user_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 19], ["user_id", 1], ["created_at", "2019-06-17 10:51:04.714673"], ["updated_at", "2019-06-17 10:51:04.714673"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Am I dying, or is this my birthday?"], ["shout_id", 7], ["created_at", "2019-06-17 10:51:04.717507"], ["updated_at", "2019-06-17 10:51:04.717507"], ["user_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 38], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.720685"], ["updated_at", "2019-06-17 10:51:04.720685"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Yes, it's tough, but not as tough as doing comedy."], ["shout_id", 22], ["created_at", "2019-06-17 10:51:04.723525"], ["updated_at", "2019-06-17 10:51:04.723525"], ["user_id", 18]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 7], ["user_id", 2], ["created_at", "2019-06-17 10:51:04.726182"], ["updated_at", "2019-06-17 10:51:04.726182"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Yes, it's tough, but not as tough as doing comedy."], ["shout_id", 1], ["created_at", "2019-06-17 10:51:04.729211"], ["updated_at", "2019-06-17 10:51:04.729211"], ["user_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 41], ["user_id", 15], ["created_at", "2019-06-17 10:51:04.731955"], ["updated_at", "2019-06-17 10:51:04.731955"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "No comment."], ["shout_id", 40], ["created_at", "2019-06-17 10:51:04.734784"], ["updated_at", "2019-06-17 10:51:04.734784"], ["user_id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 34], ["user_id", 3], ["created_at", "2019-06-17 10:51:04.737444"], ["updated_at", "2019-06-17 10:51:04.737444"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "No comment."], ["shout_id", 27], ["created_at", "2019-06-17 10:51:04.740288"], ["updated_at", "2019-06-17 10:51:04.740288"], ["user_id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 37], ["user_id", 15], ["created_at", "2019-06-17 10:51:04.743364"], ["updated_at", "2019-06-17 10:51:04.743364"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I don't know."], ["shout_id", 1], ["created_at", "2019-06-17 10:51:04.746474"], ["updated_at", "2019-06-17 10:51:04.746474"], ["user_id", 13]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 10], ["user_id", 20], ["created_at", "2019-06-17 10:51:04.749608"], ["updated_at", "2019-06-17 10:51:04.749608"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Do you want me to come with you?"], ["shout_id", 8], ["created_at", "2019-06-17 10:51:04.752769"], ["updated_at", "2019-06-17 10:51:04.752769"], ["user_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 33], ["user_id", 8], ["created_at", "2019-06-17 10:51:04.755964"], ["updated_at", "2019-06-17 10:51:04.755964"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["shout_id", 10], ["created_at", "2019-06-17 10:51:04.759883"], ["updated_at", "2019-06-17 10:51:04.759883"], ["user_id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 41], ["user_id", 16], ["created_at", "2019-06-17 10:51:04.762992"], ["updated_at", "2019-06-17 10:51:04.762992"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["shout_id", 33], ["created_at", "2019-06-17 10:51:04.765879"], ["updated_at", "2019-06-17 10:51:04.765879"], ["user_id", 13]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 40], ["user_id", 18], ["created_at", "2019-06-17 10:51:04.769013"], ["updated_at", "2019-06-17 10:51:04.769013"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Do you want me to come with you?"], ["shout_id", 11], ["created_at", "2019-06-17 10:51:04.772252"], ["updated_at", "2019-06-17 10:51:04.772252"], ["user_id", 17]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.2ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 17], ["user_id", 1], ["created_at", "2019-06-17 10:51:04.775982"], ["updated_at", "2019-06-17 10:51:04.775982"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "It's stopped."], ["shout_id", 48], ["created_at", "2019-06-17 10:51:04.779677"], ["updated_at", "2019-06-17 10:51:04.779677"], ["user_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 12], ["user_id", 14], ["created_at", "2019-06-17 10:51:04.783468"], ["updated_at", "2019-06-17 10:51:04.783468"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Yes, it's tough, but not as tough as doing comedy."], ["shout_id", 16], ["created_at", "2019-06-17 10:51:04.786550"], ["updated_at", "2019-06-17 10:51:04.786550"], ["user_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 35], ["user_id", 4], ["created_at", "2019-06-17 10:51:04.789471"], ["updated_at", "2019-06-17 10:51:04.789471"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I went the distance."], ["shout_id", 35], ["created_at", "2019-06-17 10:51:04.792343"], ["updated_at", "2019-06-17 10:51:04.792343"], ["user_id", 20]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 33], ["user_id", 1], ["created_at", "2019-06-17 10:51:04.794975"], ["updated_at", "2019-06-17 10:51:04.794975"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Happy."], ["shout_id", 39], ["created_at", "2019-06-17 10:51:04.797772"], ["updated_at", "2019-06-17 10:51:04.797772"], ["user_id", 14]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 38], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.802199"], ["updated_at", "2019-06-17 10:51:04.802199"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I don't know."], ["shout_id", 1], ["created_at", "2019-06-17 10:51:04.806621"], ["updated_at", "2019-06-17 10:51:04.806621"], ["user_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 48], ["user_id", 7], ["created_at", "2019-06-17 10:51:04.810302"], ["updated_at", "2019-06-17 10:51:04.810302"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I want to go home."], ["shout_id", 26], ["created_at", "2019-06-17 10:51:04.813240"], ["updated_at", "2019-06-17 10:51:04.813240"], ["user_id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 29], ["user_id", 17], ["created_at", "2019-06-17 10:51:04.816048"], ["updated_at", "2019-06-17 10:51:04.816048"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Is it not meningitis?"], ["shout_id", 49], ["created_at", "2019-06-17 10:51:04.818879"], ["updated_at", "2019-06-17 10:51:04.818879"], ["user_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 2], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.822027"], ["updated_at", "2019-06-17 10:51:04.822027"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "That's good. Go on, read some more."], ["shout_id", 4], ["created_at", "2019-06-17 10:51:04.824966"], ["updated_at", "2019-06-17 10:51:04.824966"], ["user_id", 17]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 33], ["user_id", 17], ["created_at", "2019-06-17 10:51:04.827881"], ["updated_at", "2019-06-17 10:51:04.827881"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I love you too, honey. Good luck with your show."], ["shout_id", 7], ["created_at", "2019-06-17 10:51:04.830729"], ["updated_at", "2019-06-17 10:51:04.830729"], ["user_id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 45], ["user_id", 4], ["created_at", "2019-06-17 10:51:04.833690"], ["updated_at", "2019-06-17 10:51:04.833690"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "My vocabulary did this to me. Your love will let you go on…"], ["shout_id", 44], ["created_at", "2019-06-17 10:51:04.836683"], ["updated_at", "2019-06-17 10:51:04.836683"], ["user_id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 4], ["user_id", 11], ["created_at", "2019-06-17 10:51:04.839544"], ["updated_at", "2019-06-17 10:51:04.839544"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Strike the tent."], ["shout_id", 47], ["created_at", "2019-06-17 10:51:04.842434"], ["updated_at", "2019-06-17 10:51:04.842434"], ["user_id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 20], ["user_id", 18], ["created_at", "2019-06-17 10:51:04.845396"], ["updated_at", "2019-06-17 10:51:04.845396"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I went the distance."], ["shout_id", 24], ["created_at", "2019-06-17 10:51:04.848857"], ["updated_at", "2019-06-17 10:51:04.848857"], ["user_id", 14]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 36], ["user_id", 12], ["created_at", "2019-06-17 10:51:04.852330"], ["updated_at", "2019-06-17 10:51:04.852330"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I am confound."], ["shout_id", 42], ["created_at", "2019-06-17 10:51:04.855834"], ["updated_at", "2019-06-17 10:51:04.855834"], ["user_id", 20]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.2ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 45], ["user_id", 10], ["created_at", "2019-06-17 10:51:04.860149"], ["updated_at", "2019-06-17 10:51:04.860149"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Well, this is certainly a pleasant surprise."], ["shout_id", 26], ["created_at", "2019-06-17 10:51:04.863645"], ["updated_at", "2019-06-17 10:51:04.863645"], ["user_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 47], ["user_id", 17], ["created_at", "2019-06-17 10:51:04.866761"], ["updated_at", "2019-06-17 10:51:04.866761"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "One! Two! Three!"], ["shout_id", 42], ["created_at", "2019-06-17 10:51:04.870360"], ["updated_at", "2019-06-17 10:51:04.870360"], ["user_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 37], ["user_id", 2], ["created_at", "2019-06-17 10:51:04.873765"], ["updated_at", "2019-06-17 10:51:04.873765"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I am confound."], ["shout_id", 40], ["created_at", "2019-06-17 10:51:04.877267"], ["updated_at", "2019-06-17 10:51:04.877267"], ["user_id", 17]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 50], ["user_id", 14], ["created_at", "2019-06-17 10:51:04.881181"], ["updated_at", "2019-06-17 10:51:04.881181"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I want to go home."], ["shout_id", 8], ["created_at", "2019-06-17 10:51:04.884789"], ["updated_at", "2019-06-17 10:51:04.884789"], ["user_id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 15], ["user_id", 3], ["created_at", "2019-06-17 10:51:04.887628"], ["updated_at", "2019-06-17 10:51:04.887628"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I don't think they even heard me."], ["shout_id", 24], ["created_at", "2019-06-17 10:51:04.890689"], ["updated_at", "2019-06-17 10:51:04.890689"], ["user_id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 38], ["user_id", 11], ["created_at", "2019-06-17 10:51:04.893606"], ["updated_at", "2019-06-17 10:51:04.893606"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Do you want me to come with you?"], ["shout_id", 39], ["created_at", "2019-06-17 10:51:04.896540"], ["updated_at", "2019-06-17 10:51:04.896540"], ["user_id", 20]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 41], ["user_id", 8], ["created_at", "2019-06-17 10:51:04.900496"], ["updated_at", "2019-06-17 10:51:04.900496"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Does nobody understand?"], ["shout_id", 23], ["created_at", "2019-06-17 10:51:04.904956"], ["updated_at", "2019-06-17 10:51:04.904956"], ["user_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 35], ["user_id", 11], ["created_at", "2019-06-17 10:51:04.908814"], ["updated_at", "2019-06-17 10:51:04.908814"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "That was the best ice-cream soda I ever tasted."], ["shout_id", 21], ["created_at", "2019-06-17 10:51:04.912121"], ["updated_at", "2019-06-17 10:51:04.912121"], ["user_id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 15], ["user_id", 19], ["created_at", "2019-06-17 10:51:04.915025"], ["updated_at", "2019-06-17 10:51:04.915025"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Goodnight, my darlings, I'll see you tomorrow."], ["shout_id", 5], ["created_at", "2019-06-17 10:51:04.918000"], ["updated_at", "2019-06-17 10:51:04.918000"], ["user_id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 31], ["user_id", 7], ["created_at", "2019-06-17 10:51:04.920988"], ["updated_at", "2019-06-17 10:51:04.920988"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "That was the best ice-cream soda I ever tasted."], ["shout_id", 1], ["created_at", "2019-06-17 10:51:04.924051"], ["updated_at", "2019-06-17 10:51:04.924051"], ["user_id", 19]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 5], ["user_id", 20], ["created_at", "2019-06-17 10:51:04.927062"], ["updated_at", "2019-06-17 10:51:04.927062"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Strike the tent."], ["shout_id", 48], ["created_at", "2019-06-17 10:51:04.930001"], ["updated_at", "2019-06-17 10:51:04.930001"], ["user_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 4], ["user_id", 10], ["created_at", "2019-06-17 10:51:04.932898"], ["updated_at", "2019-06-17 10:51:04.932898"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Do you want me to come with you?"], ["shout_id", 24], ["created_at", "2019-06-17 10:51:04.935728"], ["updated_at", "2019-06-17 10:51:04.935728"], ["user_id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 41], ["user_id", 12], ["created_at", "2019-06-17 10:51:04.938685"], ["updated_at", "2019-06-17 10:51:04.938685"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Goodnight, my darlings, I'll see you tomorrow."], ["shout_id", 18], ["created_at", "2019-06-17 10:51:04.941523"], ["updated_at", "2019-06-17 10:51:04.941523"], ["user_id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 2], ["user_id", 16], ["created_at", "2019-06-17 10:51:04.944387"], ["updated_at", "2019-06-17 10:51:04.944387"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Van Halen!"], ["shout_id", 30], ["created_at", "2019-06-17 10:51:04.947489"], ["updated_at", "2019-06-17 10:51:04.947489"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 20], ["user_id", 6], ["created_at", "2019-06-17 10:51:04.950816"], ["updated_at", "2019-06-17 10:51:04.950816"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I don't know."], ["shout_id", 24], ["created_at", "2019-06-17 10:51:04.954253"], ["updated_at", "2019-06-17 10:51:04.954253"], ["user_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 23], ["user_id", 4], ["created_at", "2019-06-17 10:51:04.957999"], ["updated_at", "2019-06-17 10:51:04.957999"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I wish I could go with you."], ["shout_id", 1], ["created_at", "2019-06-17 10:51:04.962861"], ["updated_at", "2019-06-17 10:51:04.962861"], ["user_id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 7], ["user_id", 4], ["created_at", "2019-06-17 10:51:04.966059"], ["updated_at", "2019-06-17 10:51:04.966059"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "It's stopped."], ["shout_id", 50], ["created_at", "2019-06-17 10:51:04.969150"], ["updated_at", "2019-06-17 10:51:04.969150"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 42], ["user_id", 14], ["created_at", "2019-06-17 10:51:04.972791"], ["updated_at", "2019-06-17 10:51:04.972791"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I am confound."], ["shout_id", 41], ["created_at", "2019-06-17 10:51:04.976241"], ["updated_at", "2019-06-17 10:51:04.976241"], ["user_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 43], ["user_id", 19], ["created_at", "2019-06-17 10:51:04.979618"], ["updated_at", "2019-06-17 10:51:04.979618"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I regret that I should leave this world without again beholding him."], ["shout_id", 50], ["created_at", "2019-06-17 10:51:04.983497"], ["updated_at", "2019-06-17 10:51:04.983497"], ["user_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 9], ["user_id", 10], ["created_at", "2019-06-17 10:51:04.986635"], ["updated_at", "2019-06-17 10:51:04.986635"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I don't know."], ["shout_id", 1], ["created_at", "2019-06-17 10:51:04.989610"], ["updated_at", "2019-06-17 10:51:04.989610"], ["user_id", 20]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 33], ["user_id", 14], ["created_at", "2019-06-17 10:51:04.992635"], ["updated_at", "2019-06-17 10:51:04.992635"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I love you too, honey. Good luck with your show."], ["shout_id", 10], ["created_at", "2019-06-17 10:51:04.995641"], ["updated_at", "2019-06-17 10:51:04.995641"], ["user_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 1], ["user_id", 17], ["created_at", "2019-06-17 10:51:04.998613"], ["updated_at", "2019-06-17 10:51:04.998613"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Yes, it's tough, but not as tough as doing comedy."], ["shout_id", 28], ["created_at", "2019-06-17 10:51:05.003014"], ["updated_at", "2019-06-17 10:51:05.003014"], ["user_id", 18]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 21], ["user_id", 2], ["created_at", "2019-06-17 10:51:05.007549"], ["updated_at", "2019-06-17 10:51:05.007549"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I'll be in Hell before you start breakfast! Let her rip!"], ["shout_id", 38], ["created_at", "2019-06-17 10:51:05.011074"], ["updated_at", "2019-06-17 10:51:05.011074"], ["user_id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 26], ["user_id", 1], ["created_at", "2019-06-17 10:51:05.014059"], ["updated_at", "2019-06-17 10:51:05.014059"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "One! Two! Three!"], ["shout_id", 31], ["created_at", "2019-06-17 10:51:05.016992"], ["updated_at", "2019-06-17 10:51:05.016992"], ["user_id", 18]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 18], ["user_id", 14], ["created_at", "2019-06-17 10:51:05.020070"], ["updated_at", "2019-06-17 10:51:05.020070"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Okay, I won't."], ["shout_id", 27], ["created_at", "2019-06-17 10:51:05.022934"], ["updated_at", "2019-06-17 10:51:05.022934"], ["user_id", 20]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 44], ["user_id", 9], ["created_at", "2019-06-17 10:51:05.025949"], ["updated_at", "2019-06-17 10:51:05.025949"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I forgot something."], ["shout_id", 28], ["created_at", "2019-06-17 10:51:05.028910"], ["updated_at", "2019-06-17 10:51:05.028910"], ["user_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 49], ["user_id", 15], ["created_at", "2019-06-17 10:51:05.031860"], ["updated_at", "2019-06-17 10:51:05.031860"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Do you want me to come with you?"], ["shout_id", 48], ["created_at", "2019-06-17 10:51:05.034771"], ["updated_at", "2019-06-17 10:51:05.034771"], ["user_id", 20]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 33], ["user_id", 7], ["created_at", "2019-06-17 10:51:05.037695"], ["updated_at", "2019-06-17 10:51:05.037695"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "My vocabulary did this to me. Your love will let you go on…"], ["shout_id", 40], ["created_at", "2019-06-17 10:51:05.040600"], ["updated_at", "2019-06-17 10:51:05.040600"], ["user_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 1], ["user_id", 18], ["created_at", "2019-06-17 10:51:05.043529"], ["updated_at", "2019-06-17 10:51:05.043529"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I went the distance."], ["shout_id", 44], ["created_at", "2019-06-17 10:51:05.046342"], ["updated_at", "2019-06-17 10:51:05.046342"], ["user_id", 18]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 40], ["user_id", 5], ["created_at", "2019-06-17 10:51:05.049480"], ["updated_at", "2019-06-17 10:51:05.049480"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "All my possessions for a moment of time."], ["shout_id", 42], ["created_at", "2019-06-17 10:51:05.052910"], ["updated_at", "2019-06-17 10:51:05.052910"], ["user_id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 12], ["user_id", 15], ["created_at", "2019-06-17 10:51:05.056499"], ["updated_at", "2019-06-17 10:51:05.056499"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "You can get anything you want at Alice's restaurant."], ["shout_id", 46], ["created_at", "2019-06-17 10:51:05.060247"], ["updated_at", "2019-06-17 10:51:05.060247"], ["user_id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 33], ["user_id", 2], ["created_at", "2019-06-17 10:51:05.064299"], ["updated_at", "2019-06-17 10:51:05.064299"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Do you want me to come with you?"], ["shout_id", 5], ["created_at", "2019-06-17 10:51:05.067257"], ["updated_at", "2019-06-17 10:51:05.067257"], ["user_id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 3], ["user_id", 7], ["created_at", "2019-06-17 10:51:05.070087"], ["updated_at", "2019-06-17 10:51:05.070087"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "No comment."], ["shout_id", 26], ["created_at", "2019-06-17 10:51:05.073671"], ["updated_at", "2019-06-17 10:51:05.073671"], ["user_id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 28], ["user_id", 13], ["created_at", "2019-06-17 10:51:05.077438"], ["updated_at", "2019-06-17 10:51:05.077438"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "My vocabulary did this to me. Your love will let you go on…"], ["shout_id", 35], ["created_at", "2019-06-17 10:51:05.080952"], ["updated_at", "2019-06-17 10:51:05.080952"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 11], ["user_id", 19], ["created_at", "2019-06-17 10:51:05.084987"], ["updated_at", "2019-06-17 10:51:05.084987"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "It's stopped."], ["shout_id", 12], ["created_at", "2019-06-17 10:51:05.088642"], ["updated_at", "2019-06-17 10:51:05.088642"], ["user_id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 32], ["user_id", 7], ["created_at", "2019-06-17 10:51:05.091675"], ["updated_at", "2019-06-17 10:51:05.091675"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Tape Seinfeld for me."], ["shout_id", 33], ["created_at", "2019-06-17 10:51:05.094719"], ["updated_at", "2019-06-17 10:51:05.094719"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 5], ["user_id", 18], ["created_at", "2019-06-17 10:51:05.097827"], ["updated_at", "2019-06-17 10:51:05.097827"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I went the distance."], ["shout_id", 38], ["created_at", "2019-06-17 10:51:05.101866"], ["updated_at", "2019-06-17 10:51:05.101866"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 25], ["user_id", 19], ["created_at", "2019-06-17 10:51:05.106179"], ["updated_at", "2019-06-17 10:51:05.106179"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "One! Two! Three!"], ["shout_id", 42], ["created_at", "2019-06-17 10:51:05.110544"], ["updated_at", "2019-06-17 10:51:05.110544"], ["user_id", 14]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 46], ["user_id", 1], ["created_at", "2019-06-17 10:51:05.113677"], ["updated_at", "2019-06-17 10:51:05.113677"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I wish I could go with you."], ["shout_id", 21], ["created_at", "2019-06-17 10:51:05.116673"], ["updated_at", "2019-06-17 10:51:05.116673"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 12], ["user_id", 20], ["created_at", "2019-06-17 10:51:05.119855"], ["updated_at", "2019-06-17 10:51:05.119855"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Does nobody understand?"], ["shout_id", 34], ["created_at", "2019-06-17 10:51:05.122900"], ["updated_at", "2019-06-17 10:51:05.122900"], ["user_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 4], ["user_id", 1], ["created_at", "2019-06-17 10:51:05.125752"], ["updated_at", "2019-06-17 10:51:05.125752"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I don't know."], ["shout_id", 9], ["created_at", "2019-06-17 10:51:05.128760"], ["updated_at", "2019-06-17 10:51:05.128760"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 21], ["user_id", 11], ["created_at", "2019-06-17 10:51:05.131779"], ["updated_at", "2019-06-17 10:51:05.131779"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Does nobody understand?"], ["shout_id", 48], ["created_at", "2019-06-17 10:51:05.134730"], ["updated_at", "2019-06-17 10:51:05.134730"], ["user_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 30], ["user_id", 6], ["created_at", "2019-06-17 10:51:05.137645"], ["updated_at", "2019-06-17 10:51:05.137645"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I want your bunk!"], ["shout_id", 22], ["created_at", "2019-06-17 10:51:05.157814"], ["updated_at", "2019-06-17 10:51:05.157814"], ["user_id", 20]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 21], ["user_id", 6], ["created_at", "2019-06-17 10:51:05.161247"], ["updated_at", "2019-06-17 10:51:05.161247"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "It's stopped."], ["shout_id", 44], ["created_at", "2019-06-17 10:51:05.164344"], ["updated_at", "2019-06-17 10:51:05.164344"], ["user_id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.3ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (1.1ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 6], ["user_id", 2], ["created_at", "2019-06-17 10:51:05.168386"], ["updated_at", "2019-06-17 10:51:05.168386"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "All my possessions for a moment of time."], ["shout_id", 25], ["created_at", "2019-06-17 10:51:05.173978"], ["updated_at", "2019-06-17 10:51:05.173978"], ["user_id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 25], ["user_id", 17], ["created_at", "2019-06-17 10:51:05.177568"], ["updated_at", "2019-06-17 10:51:05.177568"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I love you."], ["shout_id", 6], ["created_at", "2019-06-17 10:51:05.181306"], ["updated_at", "2019-06-17 10:51:05.181306"], ["user_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 22], ["user_id", 3], ["created_at", "2019-06-17 10:51:05.185158"], ["updated_at", "2019-06-17 10:51:05.185158"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Goodnight, my darlings, I'll see you tomorrow."], ["shout_id", 30], ["created_at", "2019-06-17 10:51:05.189010"], ["updated_at", "2019-06-17 10:51:05.189010"], ["user_id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 36], ["user_id", 4], ["created_at", "2019-06-17 10:51:05.192361"], ["updated_at", "2019-06-17 10:51:05.192361"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Happy."], ["shout_id", 6], ["created_at", "2019-06-17 10:51:05.195436"], ["updated_at", "2019-06-17 10:51:05.195436"], ["user_id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 43], ["user_id", 16], ["created_at", "2019-06-17 10:51:05.199308"], ["updated_at", "2019-06-17 10:51:05.199308"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "I regret that I should leave this world without again beholding him."], ["shout_id", 22], ["created_at", "2019-06-17 10:51:05.204870"], ["updated_at", "2019-06-17 10:51:05.204870"], ["user_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 26], ["user_id", 5], ["created_at", "2019-06-17 10:51:05.208908"], ["updated_at", "2019-06-17 10:51:05.208908"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Tape Seinfeld for me."], ["shout_id", 41], ["created_at", "2019-06-17 10:51:05.212093"], ["updated_at", "2019-06-17 10:51:05.212093"], ["user_id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 46], ["user_id", 3], ["created_at", "2019-06-17 10:51:05.214884"], ["updated_at", "2019-06-17 10:51:05.214884"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "shout_id", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["text", "Yes, it's tough, but not as tough as doing comedy."], ["shout_id", 19], ["created_at", "2019-06-17 10:51:05.217730"], ["updated_at", "2019-06-17 10:51:05.217730"], ["user_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mShout Load (0.1ms)[0m  [1m[34mSELECT  "shouts".* FROM "shouts" WHERE "shouts"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mLike Create (0.3ms)[0m  [1m[32mINSERT INTO "likes" ("shout_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shout_id", 49], ["user_id", 12], ["created_at", "2019-06-17 10:51:05.220527"], ["updated_at", "2019-06-17 10:51:05.220527"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]

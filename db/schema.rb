@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_06_14_150056) do
 
+
   create_table "comments", force: :cascade do |t|
     t.string "text"
     t.integer "shout_id"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_06_14_150056) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

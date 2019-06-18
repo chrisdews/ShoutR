@@ -19,7 +19,7 @@
             <a href="/shouts" class="navbar-item">
 
             <%= image_tag "shoutr.png", style:'width:80px'%>
-               
+
             </a>
 
                     <a role="button" id="nav-toggle" aria-label="menu" aria-expanded="false" data-target="navbarShoutR" class="navbar-burger burger">
@@ -37,7 +37,7 @@
                             <a class="navbar-link is-arrowless"> <%= link_to "SHOUT", new_shout_path %> </a>
                         </div>
                         <div class="navbar-item">
-                            <a class="navbar-link is-arrowless"> <%= link_to "My shouts", myshouts_shouts_path %></a>
+                            <a class="navbar-link is-arrowless"> <%= link_to "My shouts", shouts_path(user_filter: session[:user_id]) %></a>
                         </div>
 
                         <div class="navbar-item has-button mobile-buttons">

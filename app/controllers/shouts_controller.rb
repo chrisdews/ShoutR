@@ -1,6 +1,7 @@
 class ShoutsController < ApplicationController
   def index
-    @shouts = Shout.all
+    @shouts = Shout.sort_and_filter params
+    @user = User.find(session[:user_id])
   end
 
   def show
@@ -35,6 +36,19 @@ class ShoutsController < ApplicationController
     like = @shout.likes.find_by(user_id: session[:user_id])
     like.destroy
     redirect_to shout_path(@shout)
+  end
+
+  def likeindex
+    @shout = Shout.find(params[:id])
+    Like.create(likeable: @shout, user_id: session[:user_id])
+    redirect_to shouts_path
+  end
+
+  def unlikeindex
+    @shout = Shout.find(params[:id])
+    like = @shout.likes.find_by(user_id: session[:user_id])
+    like.destroy
+    redirect_to shouts_path
   end
 
   def comment

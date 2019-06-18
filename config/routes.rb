@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   resources :shouts  do
       patch "like", on: :member
       patch "unlike", on: :member
+      patch "likeindex", on: :member
+      patch "unlikeindex", on: :member
       patch "comment", on: :member
-      get "myshouts", on: :collection
   end
   resources :users
 end

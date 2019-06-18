@@ -1,8 +1,13 @@
 <div>
-    <div class="columns">
+    <div class="columns has-background-primary">
       <div class="column is-three-fifths outline" style="margin: 10px">
+       <div class="columns">
+        <div class="is-size-3 column has-text-centered has-text-white"><h1> OMG Look at all these SHOUTS</h1>
+        </div>
+       </div>
+
         <% @shouts.reverse.each do |shout| %>
-          <div class="box">
+          <div class="box has-background-white-ter box-shadow">
             <article class="media">
                 <div class="media-left">
                 <figure class="image is-64x64">
@@ -31,21 +36,19 @@
                 </div>
                 <nav class="level is-mobile">
                     <div class="level-left">
-                    <a class="level-item" aria-label="reply">
-                        <span class="icon is-small">
-                        <i class="fas fa-reply" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                    <a class="level-item" aria-label="retweet">
-                        <span class="icon is-small">
-                        <i class="fas fa-retweet" aria-hidden="true"></i>
-                        </span>
-                    </a>
+
                     <a class="level-item" aria-label="like">
                         <span class="icon is-small">
                         <i class="fas fa-heart" aria-hidden="true"></i>
                         </span>
                     </a>
+                    <a class="level-item" aria-label="reply">
+                        <span class="icon is-small">
+                        <i class="fas fa-reply" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                    
+                    
                     </div>
                 </nav>
                 </div>
@@ -59,7 +62,7 @@
         <% end %>
       </div>
 
-      <div class="column">Top Shouts</div>
+      <div class="is-size-3 column has-text-centered has-text-white" style="margin: 10px">Top Shouts</div>
       </div>
     </div>
 

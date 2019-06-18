@@ -7,6 +7,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
   </head>
 
   <body>
@@ -31,10 +33,10 @@
         <div id="navbarShoutR" class="navbar-menu">
                     <div class="navbar-end">
                         <div class="navbar-item">
-                            <a class="navbar-link is-arrowless"> <%= link_to "Show all shouts", shouts_path %> </a>
+                            <a class="navbar-link is-arrowless "> <%= link_to "Show all shouts", shouts_path, class:"has-text-centered has-text-white" %> </a>
                         </div>
                         <div class="navbar-item">
-                            <a class="navbar-link is-arrowless"> <%= link_to "SHOUT", new_shout_path %> </a>
+                            <a class="navbar-link is-arrowless"> <%= link_to "SHOUT", new_shout_path, class:"has-text-centered has-text-white" %> </a>
                         </div>
                         <div class="navbar-item">
                             <a class="navbar-link is-arrowless"> <%= link_to "My shouts", shouts_path(user_filter: session[:user_id]) %></a>

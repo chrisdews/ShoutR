@@ -6,4 +6,8 @@ class Shout < ApplicationRecord
   def has_like?(user)
     self.likes.find_by(user_id: user.id)
   end
+
+  def is_author?(user)
+    self.user_id == user.id
+  end
 end

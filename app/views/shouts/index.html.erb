@@ -1,9 +1,8 @@
 <h1>All shouts</h1>
 
-<% @shouts.each do |shout| %>
+<% @shouts.reverse.each do |shout| %>
 <%= shout.user.username %> <br>
 <%= shout.text %> <br>
-<%= link_to "Show Shout", shout %>
-<h4><%= shout.likes.count %> people liked this </h4>
+<h4><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </h4>
 
 <% end %>

@@ -1,4 +1,3 @@
 class Like < ApplicationRecord
-  belongs_to :shout
-  belongs_to :user
+  belongs_to :likeable, polymorphic: true
 end

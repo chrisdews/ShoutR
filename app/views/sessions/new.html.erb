@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+      <section class="hero is-fullheight is-desktop is-primary is-bold">
+        
+        <div class="columns">
+          <div class="column is-6 is-offset-3" style="margin-top: 20%">
+            <h2 class="subtitle has-text-centered has-text-weight-bold">
+              <%= image_tag "shoutr.png", style:'width:200px'%>
+              <div>
+                <span class="no-wrap"> Shout yo thoughts </span>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+
+        <div class="columns">        
+            <div class="column is-4 is-offset-4" style="margin-bottom: 20%"%>
+                <section class="hero landing-left">
+
+                <%= form_tag(sessions_path, method:"post", class:"field") do %>
+                    <%= label_tag :username, nil, class: 'label'%>
+                    <%= text_field_tag :username, nil, class:'input' %>
+                    <%= label_tag :password, nil, class: 'label'%>
+                    <%= password_field_tag :password, nil, class:'input'%>
+                    
+                    <%= submit_tag "Log In!", class:'button is-link' %>
+                <% end %>
+                <br>
+
+                Don't have an account? <a href="/signup">Sign Up</a>
+
+                <% if flash[:errors] %>
+                    <div class="errors">
+                        <h4>Oops!</h4>
+                    <% flash[:errors].each do |error| %>
+                        <p><%= error %></p>
+                    <% end %>
+                    </div>
+                <% end %>
+                <% if flash[:notice] %>
+                    <h1><%= flash[:notice] %></h1>
+                <% end %>
+            </div>
+        </div>   
+
+      </section>
+    </body>
+</html>

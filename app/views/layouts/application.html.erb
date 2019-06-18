@@ -4,12 +4,67 @@
     <title>ShoutR</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+
+    <% unless controller_name == "users" || controller_name == "sessions"%>
+     <nav role="navigation" aria-label="main navigation" class="navbar is-transparent main-nav has-background-info">
+      <div class="container">
+        <div class="navbar-brand">
+            <a href="/shouts" class="navbar-item">
+
+            <%= image_tag "shoutr.png", style:'width:80px'%>
+
+            </a>
+
+                    <a role="button" id="nav-toggle" aria-label="menu" aria-expanded="false" data-target="navbarShoutR" class="navbar-burger burger">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+        </div>
+        <div id="navbarShoutR" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <a class="navbar-link is-arrowless"> <%= link_to "Show all shouts", shouts_path %> </a>
+                        </div>
+                        <div class="navbar-item">
+                            <a class="navbar-link is-arrowless"> <%= link_to "SHOUT", new_shout_path %> </a>
+                        </div>
+                        <div class="navbar-item">
+                            <a class="navbar-link is-arrowless"> <%= link_to "My shouts", shouts_path(user_filter: session[:user_id]) %></a>
+                        </div>
+
+                        <div class="navbar-item has-button mobile-buttons">
+                          <% if logged_in? %>
+                            <div class="buttons">
+                              <a>
+                              <%= link_to 'Log out', logout_path, class:'link button is-white is-outlined' %>
+                              </a>
+                            </div>
+                          <% end %>
+                        </div>
+                    </div>
+        </div>
+      </div>
+     </nav>
+    <% end %>
+
+      <%= yield %>
+
+  <% unless controller_name == "users" || controller_name == "sessions"%>
+    <footer class="footer">
+      <div class="content has-text-centered">
+      <p>
+      <strong>ShoutR</strong> by Felix & Chris
+      </p>
+      </div>
+    </footer>
+  <% end %>
   </body>
 </html>

@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :require_login
+  
   def like
     @comment = Comment.find(params[:id])
     Like.create(likeable: @comment, user_id: session[:user_id])
@@ -17,6 +19,12 @@ class CommentsController < ApplicationController
     @shout = @comment.shout
     @comment.destroy
     redirect_to shout_path(@shout)
+  end
+
+  private
+
+  def require_login
+    redirect_to login_path unless session.include? :user_id
   end
 
 end

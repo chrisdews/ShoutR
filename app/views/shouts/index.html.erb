@@ -25,6 +25,7 @@
                     <small><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
                     </p>
 
+
                     <div class="columns">
                       <div class="column is-1">
                         <% if shout.has_like?(@user) %>
@@ -44,6 +45,7 @@
                     
                         <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(shout), id:"comment" %>
                       </div>
+
                     </div>
                 </div>
                 
@@ -58,7 +60,18 @@
         <% end %>
       </div>
 
-      <div class="is-size-3 column has-text-centered has-text-white" style="margin-right:5%">Top Shouts</div>
+
+      <div class="is-size-3 column has-text-centered has-text-white" style="margin-right:5%">
+        
+        Top Shouts
+
+
+      <%= form_tag(shouts_path, method: :post) do %>
+          <%= hidden_field_tag :user_id, @user.id %>
+          What would you like to shout?: <input type="text" name="text"><br>
+          <%= submit_tag "Shout" %>
+      <% end %>
+      </div>
       </div>
     </div>
 

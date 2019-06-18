@@ -24,12 +24,56 @@
       <%= link_to "My shouts", myshouts_shouts_path %>
       <%= link_to "SHOUT", new_shout_path %>
 
-    </nav>
+    <% unless controller_name == "users" || controller_name == "sessions"%>
+     <nav role="navigation" aria-label="main navigation" class="navbar is-transparent main-nav has-background-info">
+      <div class="container">
+        <div class="navbar-brand">
+            <a href="/shouts" class="navbar-item">
 
+            <%= image_tag "shoutr.png", style:'width:70px'%>
+                <%# <img src="/images/shoutr.png" class="logo is-hidden-mobile" style="width: 300px; height: auto;"> %>
+                <%# <img src="/images/shoutr-logo.svg" class="logo is-hidden-tablet" style="height: auto;"> %>
+                <%# add logo images here %>
+            </a>
+
+                    <a role="button" id="nav-toggle" aria-label="menu" aria-expanded="false" data-target="navbarShoutR" class="navbar-burger burger">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+        </div>
+        <div id="navbarShoutR" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <a class="navbar-link is-arrowless"> <%= link_to "Show all shouts", shouts_path %> </a>
+                        </div>
+                        <div class="navbar-item">
+                            <a class="navbar-link is-arrowless"> <%= link_to "SHOUT", new_shout_path %> </a>
+                        </div>
+
+                        <div class="navbar-item">
+                            <a href="/adverts/publish-advertisement" class="navbar-link is-arrowless"> Link_here</a>
+                        </div>
+
+
+                        <div class="navbar-item has-button mobile-buttons">
+                          <% if logged_in? %>
+                            <div class="buttons">
+                              <a>
+                              <%= link_to 'Log out', logout_path, class:'link button is-white is-outlined' %>
+                              </a>
+                            </div>
+                          <% end %>
+                        </div>
+                    </div>
+        </div>
+      </div>
+     </nav>
+    <% end %>
 
       <%= yield %>
 
-
+  <% unless controller_name == "users" || controller_name == "sessions"%>
     <footer class="footer">
       <div class="content has-text-centered">
       <p>
@@ -37,5 +81,6 @@
       </p>
       </div>
     </footer>
+  <% end %>
   </body>
 </html>

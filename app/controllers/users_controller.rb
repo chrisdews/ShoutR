@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+    # use layout here to define which template gets yielded
+
     def new
         @user = User.new
     end

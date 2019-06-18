@@ -1,6 +1,6 @@
 <div>
     <div class="columns has-background-primary">
-      <div class="column is-three-fifths outline" style="margin: 10px">
+      <div class="column is-one-half outline is-offset-2" style="margin:10px; margin-left:5%; margin-right:5%">
        <div class="columns">
         <div class="is-size-3 column has-text-centered has-text-white"><h1> OMG Look at all these SHOUTS</h1>
         </div>
@@ -25,13 +25,17 @@
                     <small><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
                     </p>
                     <% if shout.has_like?(@user) %>
-                    <%= form_for shout, url: unlikeindex_shout_path(shout) do |f| %>
-                    <%= f.submit "Unlike" %>
-                    <% end %>
+                      <%= form_for shout, url: unlikeindex_shout_path(shout) do |f| %>
+                      <a class="level-item" aria-label="like">
+                        <span class="icon is-small">
+                         <%= f.submit "Unlike", class:"fas fa-heart" %>
+                        </span>
+                      </a>
+                      <% end %>
                     <% else %>
-                    <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
-                    <%= f.submit "Like" %>
-                    <% end %>
+                     <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
+                      <%= f.submit "Like" %>
+                     <% end %>
                     <% end %> </h4>
                 </div>
                 <nav class="level is-mobile">
@@ -62,7 +66,7 @@
         <% end %>
       </div>
 
-      <div class="is-size-3 column has-text-centered has-text-white" style="margin: 10px">Top Shouts</div>
+      <div class="is-size-3 column has-text-centered has-text-white" style="margin-right:5%">Top Shouts</div>
       </div>
     </div>
 

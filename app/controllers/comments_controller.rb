@@ -11,4 +11,12 @@ class CommentsController < ApplicationController
     like.destroy
     redirect_to shout_path(@comment.shout)
   end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @shout = @comment.shout
+    @comment.destroy
+    redirect_to shout_path(@shout)
+  end
+
 end

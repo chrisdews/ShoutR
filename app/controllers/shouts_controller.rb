@@ -13,7 +13,7 @@ class ShoutsController < ApplicationController
   end
 
   def create
-    @shout = Shout.new(shoutparams)
+    @shout = Shout.new(text: shoutparams["text"], user_id: @user.id)
     @shout.save
     redirect_to shouts_path
   end
@@ -36,6 +36,17 @@ class ShoutsController < ApplicationController
     like.destroy
     redirect_to shout_path(@shout)
   end
+
+  def comment
+    @shout = Shout.find(params[:id])
+    Comment.create(text: shoutparams["text"], user_id: @user.id, shout_id: @shout.id)
+    redirect_to shout_path(@shout)
+  end
+
+  def destroycomment
+    byebug
+  end
+
 
   private
 

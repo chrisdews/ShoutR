@@ -43,6 +43,10 @@ class ShoutsController < ApplicationController
     redirect_to shout_path(@shout)
   end
 
+  def destroycomment
+    byebug
+  end
+
 
   private
 

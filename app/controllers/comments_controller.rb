@@ -1,15 +1,4 @@
 class CommentsController < ApplicationController
-  def new
-    @comment = Comment.new
-  end
-
-  def create
-    byebug
-    @comment = Comment.new(text: commentparams["text"], user_id: @user.id)
-    @comment.save
-    redirect_to shout_path(@comment.shout)
-  end
-
   def like
     @comment = Comment.find(params[:id])
     Like.create(likeable: @comment, user_id: session[:user_id])
@@ -23,9 +12,11 @@ class CommentsController < ApplicationController
     redirect_to shout_path(@comment.shout)
   end
 
-  private
-
-  def commentparams
-    params.require(:comment).permit(:text)
+  def destroy
+    @comment = Comment.find(params[:id])
+    @shout = @comment.shout
+    @comment.destroy
+    redirect_to shout_path(@shout)
   end
+
 end

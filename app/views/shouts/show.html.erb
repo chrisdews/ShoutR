@@ -1,7 +1,15 @@
-<h1>Shout</h1>
 <%= @shout.user.username %> <br>
 <%= @shout.text %>
-<h4>Number of likes: <%= @shout.likes.count %>
+<h4> <%= @shout.likes.count %> Likes || <%= @shout.comments.count %> Comments
+
+<!-- Commenting -->
+<%= form_for @shout, url: comment_shout_path(@shout) do |f| %>
+  <%= f.label "Type in your message" %>
+  <%= f.text_field :text %>
+  <%= f.submit "Comment" %>
+<% end %>
+
+<!-- Like/Unlike Button for Post -->
 <% if @shout.has_like?(@user) %>
 <%= form_for @shout, url: unlike_shout_path(@shout) do |f| %>
 <%= f.submit "Unlike" %>
@@ -13,12 +21,14 @@
 <% end %> </h4>
 
 
-<h2>Comments</h2>
-<% @shout.comments.each do |comment| %>
+<h2>Comments</h2> <!-- Show comments -->
+<% @shout.comments.each do |comment| %> <!-- Open each loop -->
 <h5>
 <%= comment.user.username %> <br>
 <%= comment.text %>
-<h4>Number of likes: <%= comment.likes.count %>
+<h4> <%= comment.likes.count %> Likes
+
+<!-- Like/Unlike Button for Comment -->
 <% if comment.has_like?(@user) %>
 <%= form_for comment, url: unlike_comment_path(comment) do |f| %>
 <%= f.submit "Unlike" %>
@@ -28,9 +38,12 @@
 <%= f.submit "Like" %>
 <% end %></h5>
 <% end %>
-<% end %>
+<% end %> <!-- Close each loop -->
 
-
+<!-- If post is written give option to delete -->
+<% if @shout.is_author?(@user) %>
 <%= form_for(@shout, :html => { :method => :delete, :remote => true }) do |f| %>
 <%= f.submit "Delete Post" %>
+<% end %>
+<% else %>
 <% end %>

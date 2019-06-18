@@ -1,6 +1,6 @@
 class Shout < ApplicationRecord
-  has_many :likes, as: :likeable
-  has_many :comments
+  has_many :likes, as: :likeable, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
   belongs_to :user
 
   def has_like?(user)

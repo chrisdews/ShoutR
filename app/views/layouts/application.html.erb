@@ -11,18 +11,6 @@
 
   <body>
     <nav>
-        <div class="container">
-          <div class="float-left is-size-1"><h5 style="margin-bottom: 0;">ShoutR</h5>
-          </div>
-          <% if logged_in? %>
-             <div class="float-right"><h3 style="margin-bottom: 0;"><%= link_to 'Log out', logout_path %></h3>
-             </div>
-          <% end %>
-        </div>
-
-      <%= link_to "Show all shouts", shouts_path %>
-      <%= link_to "My shouts", myshouts_shouts_path %>
-      <%= link_to "SHOUT", new_shout_path %>
 
     <% unless controller_name == "users" || controller_name == "sessions"%>
      <nav role="navigation" aria-label="main navigation" class="navbar is-transparent main-nav has-background-info">
@@ -30,10 +18,8 @@
         <div class="navbar-brand">
             <a href="/shouts" class="navbar-item">
 
-            <%= image_tag "shoutr.png", style:'width:70px'%>
-                <%# <img src="/images/shoutr.png" class="logo is-hidden-mobile" style="width: 300px; height: auto;"> %>
-                <%# <img src="/images/shoutr-logo.svg" class="logo is-hidden-tablet" style="height: auto;"> %>
-                <%# add logo images here %>
+            <%= image_tag "shoutr.png", style:'width:80px'%>
+               
             </a>
 
                     <a role="button" id="nav-toggle" aria-label="menu" aria-expanded="false" data-target="navbarShoutR" class="navbar-burger burger">
@@ -50,11 +36,9 @@
                         <div class="navbar-item">
                             <a class="navbar-link is-arrowless"> <%= link_to "SHOUT", new_shout_path %> </a>
                         </div>
-
                         <div class="navbar-item">
-                            <a href="/adverts/publish-advertisement" class="navbar-link is-arrowless"> Link_here</a>
+                            <a class="navbar-link is-arrowless"> <%= link_to "My shouts", myshouts_shouts_path %></a>
                         </div>
-
 
                         <div class="navbar-item has-button mobile-buttons">
                           <% if logged_in? %>

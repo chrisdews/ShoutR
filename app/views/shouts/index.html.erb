@@ -24,6 +24,15 @@
                     <p>
                     <small><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
                     </p>
+                    <% if shout.has_like?(@user) %>
+                    <%= form_for shout, url: unlikeindex_shout_path(shout) do |f| %>
+                    <%= f.submit "Unlike" %>
+                    <% end %>
+                    <% else %>
+                    <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
+                    <%= f.submit "Like" %>
+                    <% end %>
+                    <% end %> </h4>
                 </div>
                 <nav class="level is-mobile">
                     <div class="level-left">
@@ -45,11 +54,11 @@
                 </div>
             </article>
           </div>
-                
-        
-        
-      
-      
+
+
+
+
+
         <% end %>
       </div>
 
@@ -60,8 +69,6 @@
 
 
 
-       
-        
+
+
 </div>
-
-

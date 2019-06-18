@@ -1,7 +1,0 @@
-
-<% Shout.is_my_shout?(session[:user_id]).each do |shout| %>
-<%= shout.user.username %> <br>
-<%= shout.text %> <br>
-<h4><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </h4>
-
-<% end %>

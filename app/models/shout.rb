@@ -14,4 +14,9 @@ class Shout < ApplicationRecord
   def self.is_my_shout?(userid)
     Shout.select{ |shout| shout.user_id == userid }
   end
+
+  def self.sort_and_filter params
+    shouts = params[:user_filter] ? Shout.where(user_id: params[:user_filter]) : Shout.all
+    shouts
+  end
 end

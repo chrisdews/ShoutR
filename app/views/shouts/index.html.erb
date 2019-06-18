@@ -1,8 +1,8 @@
 <div>
     <div class="columns has-background-primary">
-      <div class="column is-one-half outline is-offset-2" style="margin:10px; margin-left:5%; margin-right:5%">
+      <div class="column is-one-half outline is-offset-1">
        <div class="columns">
-        <div class="is-size-3 column has-text-centered has-text-white"><h1> OMG Look at all these SHOUTS</h1>
+        <div class="is-size-3 column has-text-centered has-text-white"><div class="shouttitle"> OMG Look at all these SHOUTS</div>
         </div>
        </div>
 
@@ -61,23 +61,21 @@
       </div>
 
 
-      <div class="is-size-3 column has-text-centered has-text-white" style="margin-right:5%">
-        
-        Top Shouts
-
-
-      <%= form_tag(shouts_path, method: :post) do %>
+      <div class="is-size-3 column is-one-third has-text-centered has-text-white" style="margin-right:5%">
+        <%= form_tag(shouts_path, method: :post) do %>
           <%= hidden_field_tag :user_id, @user.id %>
-          What would you like to shout?: <input type="text" name="text"><br>
-          <%= submit_tag "Shout" %>
-      <% end %>
-      </div>
-      </div>
-    </div>
+            <div class="shouttitle">Shout yourself</div>
+            <input type="text" name="text", class='textarea'>
+          <%= submit_tag "Shout!", class:'button is-link' %>
+        <% end %>
 
+        <div class="shouttitle">Top Shouts This Week</div>
 
+     </div>
 
+    
+        
 
-
-
+    </div> 
+    <%# end of columns %>
 </div>

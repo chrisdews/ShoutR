@@ -1,13 +1,7 @@
-<%= @shout.user.username %> <br>
-<%= @shout.text %>
-<h4> <%= @shout.likes.count %> Likes || <%= @shout.comments.count %> Comments
+
 
 <!-- Commenting -->
-<%= form_for @shout, url: comment_shout_path(@shout) do |f| %>
-  <%= f.label "Type in your message" %>
-  <%= f.text_field :text %>
-  <%= f.submit "Comment" %>
-<% end %>
+
 
 <!-- Like/Unlike Button for Post -->
 <% if @shout.has_like?(@user) %>
@@ -54,3 +48,140 @@
 <%= f.submit "Delete Post" %>
 <% end %>
 <% end %>
+
+
+============== chris work in progress ===============
+
+<div class="columns has-background-primary">
+      <div class="column is-one-half outline is-offset-1">
+       <div class="columns">
+        <div class="is-size-3 column has-text-centered has-text-white"><div class="shouttitle"> LOOK at this SHOUT, add a comment.</div>
+        </div>
+       </div>
+
+
+        
+          <div class="box has-background-white-ter box-shadow">
+            <article class="media">
+                <div class="media-left">
+                <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                </figure>
+                </div>
+                <div class="media-content">
+                <div class="content">
+                    <p>
+                    <strong><%= @shout.user.username %></strong> <small>31m</small>
+                    <br>
+                    <%= @shout.text %>
+                    </p>
+                    <p>
+                    <small><%= @shout.likes.count %> Likes || <%= link_to "#{@shout.comments.count} Comments", @shout %> </small>
+                    </p>
+
+
+                    <div class="columns">
+                      <div class="column is-1">
+                        <% if @shout.has_like?(@user) %>
+                            <%= form_for @shout, url: unlikeindex_shout_path(@shout) do |f| %>
+                         <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
+                        buttons don't route correctly*********
+                         <% end %>
+                        <% else %>
+                         <%= form_for @shout, url: likeindex_shout_path(@shout) do |f| %>
+                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                        <% end %>
+
+                     
+                        <% end %> 
+                      </div>
+                      <div class="column is-2 ">
+                    
+                        <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(@shout), id:"comment" %>
+                      </div>
+
+                    </div>
+                </div>
+                
+                </div>
+            </article>
+          </div>
+          <div class="commentstyle">
+
+           <div class="box has-background-white-ter box-shadow showcomments">
+            <article class="media">
+                <div class="media-left">
+                <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                </figure>
+                </div>
+                <div class="media-content">
+                <div class="content">
+                    <% @shout.comments.each do |comment| %> <!-- Open each loop -->
+                    <h5>
+                    <%= comment.user.username %> <br>
+                    <%= comment.text %>
+                <h4> <%= comment.likes.count %> Likes
+
+                <%end%>
+
+
+                    <div class="columns">
+                      <div class="column is-1">
+                        <% if @shout.has_like?(@user) %>
+                            <%= form_for @shout, url: unlikeindex_shout_path(@shout) do |f| %>
+                         <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
+                        buttons don't route correctly*********
+                         <% end %>
+                        <% else %>
+                         <%= form_for @shout, url: likeindex_shout_path(@shout) do |f| %>
+                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                        <% end %>
+
+                     
+                        <% end %> 
+                      </div>
+                      <div class="column is-2 ">
+                    
+                        <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(@shout), id:"comment" %>
+                      </div>
+
+                    </div>
+                </div>
+                
+                </div>
+            </article>
+           </div>
+
+           <div class="box has-background-white-ter box-shadow addnewcomment">
+            <article class="media">
+                <div class="media-left">
+                <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                </figure>
+                </div>
+                <div class="media-content">
+                <div class="content">
+                    <%= form_for @shout, url: comment_shout_path(@shout) do |f| %>
+            <%= f.label "Type in your message" %>
+            <%= f.text_field :text %>
+            <%= f.submit "Comment" %>
+            <% end %>
+
+
+                    
+                </div>
+                
+                </div>
+            </article>
+           </div>
+
+          </div>
+
+
+
+
+
+        
+      </div>
+</div>

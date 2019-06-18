@@ -10,4 +10,8 @@ class Shout < ApplicationRecord
   def is_author?(user)
     self.user_id == user.id
   end
+
+  def self.is_my_shout?(userid)
+    Shout.select{ |shout| shout.user_id == userid }
+  end
 end

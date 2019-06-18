@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       patch "like", on: :member
       patch "unlike", on: :member
       patch "comment", on: :member
+      get "myshouts", on: :collection
   end
   resources :users
 end

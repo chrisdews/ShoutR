@@ -24,37 +24,29 @@
                     <p>
                     <small><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
                     </p>
-                    <% if shout.has_like?(@user) %>
-                      <%= form_for shout, url: unlikeindex_shout_path(shout) do |f| %>
-                      <a class="level-item" aria-label="like">
-                        <span class="icon is-small">
-                         <%= f.submit "Unlike", class:"fas fa-heart" %>
-                        </span>
-                      </a>
-                      <% end %>
-                    <% else %>
-                     <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
-                      <%= f.submit "Like" %>
-                     <% end %>
-                    <% end %> </h4>
-                </div>
-                <nav class="level is-mobile">
-                    <div class="level-left">
 
-                    <a class="level-item" aria-label="like">
-                        <span class="icon is-small">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                    <a class="level-item" aria-label="reply">
-                        <span class="icon is-small">
-                        <i class="fas fa-reply" aria-hidden="true"></i>
-                        </span>
-                    </a>
+                    <div class="columns">
+                      <div class="column is-1">
+                        <% if shout.has_like?(@user) %>
+                            <%= form_for shout, url: unlikeindex_shout_path(shout) do |f| %>
+                         <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
+                        
+                         <% end %>
+                        <% else %>
+                         <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
+                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                        <% end %>
+
+                     
+                        <% end %> 
+                      </div>
+                      <div class="column is-2 ">
                     
-                    
+                        <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(shout), id:"comment" %>
+                      </div>
                     </div>
-                </nav>
+                </div>
+                
                 </div>
             </article>
           </div>

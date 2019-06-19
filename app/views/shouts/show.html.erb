@@ -15,7 +15,7 @@
 <% end %> </h4>
 
 
-<h2>Comments</h2> <!-- Show comments -->
+<h2>Comments</h2> <!-- Show comments chris done.-->
 <% @shout.comments.each do |comment| %> <!-- Open each loop -->
 <h5>
 <%= comment.user.username %> <br>
@@ -53,23 +53,21 @@
 ============== chris work in progress ===============
 
 <div class="columns has-background-primary">
-      <div class="column is-one-half outline is-offset-1">
-       <div class="columns">
+    <div class="column is-one-half outline is-offset-1">
+       <div class="columns title">
         <div class="is-size-3 column has-text-centered has-text-white"><div class="shouttitle"> LOOK at this SHOUT, add a comment.</div>
         </div>
        </div>
-
-
-        
-          <div class="box has-background-white-ter box-shadow">
+       
+      <div class="box has-background-white-ter box-shadow mainshout">
             <article class="media">
                 <div class="media-left">
-                <figure class="image is-64x64">
+                 <figure class="image is-64x64">
                     <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                </figure>
+                 </figure>
                 </div>
                 <div class="media-content">
-                <div class="content">
+                  <div class="content">
                     <p>
                     <strong><%= @shout.user.username %></strong> <small>31m</small>
                     <br>
@@ -80,15 +78,31 @@
                     </p>
 
 
+
+<% if @shout.has_like?(@user) %>
+<%= form_for @shout, url: unlike_shout_path(@shout) do |f| %>
+<%= f.submit "Unlike" %>
+<% end %>
+<% else %>
+<%= form_for @shout, url: like_shout_path(@shout) do |f| %>
+<%= f.submit "Like" %>
+<% end %>
+<% end %> </h4>
+
+
+
+
+
+
                     <div class="columns">
                       <div class="column is-1">
                         <% if @shout.has_like?(@user) %>
-                            <%= form_for @shout, url: unlikeindex_shout_path(@shout) do |f| %>
+                            <%= form_for @shout, url: unlike_shout_path(@shout) do |f| %>
                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
                         buttons don't route correctly*********
                          <% end %>
                         <% else %>
-                         <%= form_for @shout, url: likeindex_shout_path(@shout) do |f| %>
+                         <%= form_for @shout, url: like_shout_path(@shout) do |f| %>
                           <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
                         <% end %>
 
@@ -96,65 +110,68 @@
                         <% end %> 
                       </div>
                       <div class="column is-2 ">
-                    
-                        <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(@shout), id:"comment" %>
+                        <a href="#newcomment"><i class="fas fa-reply fa-lg"></i></a>
                       </div>
 
                     </div>
-                </div>
-                
+                  </div>
                 </div>
             </article>
-          </div>
-          <div class="commentstyle">
+      </div>
 
-           <div class="box has-background-white-ter box-shadow showcomments">
-            <article class="media">
-                <div class="media-left">
-                <figure class="image is-64x64">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                </figure>
-                </div>
-                <div class="media-content">
-                <div class="content">
-                    <% @shout.comments.each do |comment| %> <!-- Open each loop -->
-                    <h5>
-                    <%= comment.user.username %> <br>
-                    <%= comment.text %>
-                <h4> <%= comment.likes.count %> Likes
-
-                <%end%>
-
-
-                    <div class="columns">
-                      <div class="column is-1">
-                        <% if @shout.has_like?(@user) %>
-                            <%= form_for @shout, url: unlikeindex_shout_path(@shout) do |f| %>
-                         <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
-                        buttons don't route correctly*********
-                         <% end %>
-                        <% else %>
-                         <%= form_for @shout, url: likeindex_shout_path(@shout) do |f| %>
-                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
-                        <% end %>
-
-                     
-                        <% end %> 
-                      </div>
-                      <div class="column is-2 ">
+      <div class="commentstyle">
+           <% @shout.comments.each do |comment| %> <!-- Open each loop -->
+            <div class="box has-background-white-ter box-shadow showcomments">
+              <article class="media">
+                  <div class="media-left">
+                  <figure class="image is-64x64">
+                      <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                  </figure>
+                  </div>
+                  <div class="media-content">
+                  <div class="content">
+                      
                     
-                        <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(@shout), id:"comment" %>
+                      <strong><%= comment.user.username %></strong> <small>31m</small>
+                      <br>
+                      <%= comment.text %>
+                      <%= comment.likes.count %> Likes
+
+                  
+
+
+                      <div class="columns">
+                        <div class="column is-1">
+                          <% if @shout.has_like?(@user) %>
+                              <%= form_for @shout, url: unlikeindex_shout_path(@shout) do |f| %>
+                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
+                          buttons don't route correctly*********
+                          <% end %>
+                          <% else %>
+                          <%= form_for @shout, url: likeindex_shout_path(@shout) do |f| %>
+                            <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                          <% end %>
+
+                      
+                          <% end %> 
+                        </div>
+                        <div class="column is-2 ">
+                      
+                          <a href="#newcomment"><i class="fas fa-reply fa-lg"></i></a>
+                        </div>
+
                       </div>
+                  </div>
+                  
+                  </div>
+              </article>
+            </div>
+            <% end %>
+      </div>
 
-                    </div>
-                </div>
-                
-                </div>
-            </article>
-           </div>
-
-           <div class="box has-background-white-ter box-shadow addnewcomment">
-            <article class="media">
+      <div class="newcomment" id="newcomment">
+            <div class="box has-background-white-ter box-shadow addnewcomment">
+             <article class="media">
                 <div class="media-left">
                 <figure class="image is-64x64">
                     <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
@@ -163,25 +180,26 @@
                 <div class="media-content">
                 <div class="content">
                     <%= form_for @shout, url: comment_shout_path(@shout) do |f| %>
-            <%= f.label "Type in your message" %>
-            <%= f.text_field :text %>
-            <%= f.submit "Comment" %>
-            <% end %>
+              <%= f.label "Type in your message" %>
+              <%= f.text_field :text %>
+              <%= f.submit "Comment" %>
+              <% end %>
 
 
-                    
-                </div>
-                
-                </div>
-            </article>
+                      
+                  </div>
+                  
+                  </div>
+              </article>
            </div>
+      </div>
 
-          </div>
+          
 
 
 
 
 
         
-      </div>
+    </div>
 </div>

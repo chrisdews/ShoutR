@@ -1,56 +1,135 @@
-<%= @shout.user.username %> <br>
-<%= @shout.text %>
-<h4> <%= @shout.likes.count %> Likes || <%= @shout.comments.count %> Comments
+<div class="columns has-background-primary">
+    <div class="column is-one-half outline is-offset-1">
+       <div class="columns title">
+        <div class="is-size-3 column has-text-centered has-text-white"><div class="shouttitle"> LOOK at this SHOUT, add a comment.</div>
+        </div>
+       </div>
+       
+      
+      <div class="box has-background-white-ter box-shadow mainshout">
+            <article class="media">
+                <div class="media-left">
+                 <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                 </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                    <strong><%= @shout.user.username %></strong> <small>31m</small>
+                    <br>
+                    <div class="is-size-3">
+                      <%= @shout.text %>
+                    </div>
+                    </p>
+                    <p>
+                    <small><%= @shout.likes.count %> Likes || <%= link_to "#{@shout.comments.count} Comments", @shout %> </small>
+                    </p>
 
-<!-- Commenting -->
-<%= form_for @shout, url: comment_shout_path(@shout) do |f| %>
-  <%= f.label "Type in your message" %>
-  <%= f.text_field :text %>
-  <%= f.submit "Comment" %>
-<% end %>
 
-<!-- Like/Unlike Button for Post -->
-<% if @shout.has_like?(@user) %>
-<%= form_for @shout, url: unlike_shout_path(@shout) do |f| %>
-<%= f.submit "Unlike" %>
-<% end %>
-<% else %>
-<%= form_for @shout, url: like_shout_path(@shout) do |f| %>
-<%= f.submit "Like" %>
-<% end %>
-<% end %> </h4>
+                    <div class="columns">
+                      <div class="column is-1">
+                        <% if @shout.has_like?(@user) %>
+                            <%= form_for @shout, url: unlike_shout_path(@shout) do |f| %>
+                         <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
+                         <% end %>
+                        <% else %>
+                         <%= form_for @shout, url: like_shout_path(@shout) do |f| %>
+                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                         <% end %>
+                        <% end %> 
+                      </div>
+                      <div class="column is-1 ">
+                        <a href="#newcomment"><i class="fas fa-reply fa-lg"></i></a>
+                      </div>
+                      <div class="column is-1">
+                        <% if @shout.is_author?(@user) %>
+                          <%= form_for @shout, method: :delete do |f| %>
+                            <%= f.button'<i class="fas fa-times fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "delete" %>
+                          <% end %>
+                        <% end %>
+                      </div>
 
+                      <div class="column is-2">
+                          <% if @shout.likes.count > 2 %>
+                            <i class="fas fa-star fa-2x" aria-hidden="true" id="star"></i><span>Popular Post!</span>
+                          <% end %>
+                      </div>
 
-<h2>Comments</h2> <!-- Show comments -->
-<% @shout.comments.each do |comment| %> <!-- Open each loop -->
-<h5>
-<%= comment.user.username %> <br>
-<%= comment.text %>
-<h4> <%= comment.likes.count %> Likes
+                    </div>
+                  </div>
+                </div>
+            </article>
+      </div>
 
-<!-- Like/Unlike Button for Comment -->
-<% if comment.has_like?(@user) %>
-<%= form_for comment, url: unlike_comment_path(comment) do |f| %>
-<%= f.submit "Unlike" %>
-<% end %>
-<% else %>
-<%= form_for comment, url: like_comment_path(comment) do |f| %>
-<%= f.submit "Like" %>
-<% end %></h5>
-<% end %>
+      <%# all comments %>
+      <div class="commentstyle">
+           <% @shout.comments.each do |comment| %> <!-- Open each loop -->
+            <div class="box has-background-white-ter box-shadow showcomments">
+              <article class="media">
+                  <div class="media-left">
+                  <figure class="image is-64x64">
+                      <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                  </figure>
+                  </div>
+                  <div class="media-content">
+                  <div class="content">
+                      <strong><%= comment.user.username %></strong> <small>31m</small>
+                      <br>
+                      <div class="is-size-4">
+                        <%= comment.text %>
+                      </div>
+                      <%= comment.likes.count %> Likes
 
-<!-- If comment is written give option to delete -->
-<% if comment.is_author?(@user) %>
-<%= form_for comment, method: :delete do |f| %>
-<%= f.submit "Delete Comment" %>
-<% end %>
-<% end %>
+                      <div class="columns">
+                        <div class="column is-1">
+                          <% if comment.has_like?(@user) %>
+                              <%= form_for comment, url: unlike_comment_path(comment) do |f| %>
+                                <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
+                              <% end %>
+                          <% else %>
+                              <%= form_for comment, url: like_comment_path(comment) do |f| %>
+                                <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                              <% end %>
+                          <% end %> 
+                        </div>
+                        <div class="column is-1 ">
+                          <a href="#newcomment"><i class="fas fa-reply fa-lg"></i></a>
+                        </div>
+                        <div class="column is-1">
+                          <% if comment.is_author?(@user) %>
+                            <%= form_for comment, method: :delete do |f| %>
+                              <%= f.button'<i class="fa fa-times fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "delete" %>
+                            <% end %>
+                          <% end %>
+                        </div>
+                        <div class="column is-1">
+                          <% if comment.likes.count > 1 %>
+                            <i class="fas fa-star fa-2x" aria-hidden="true" id="star"></i>
+                          <% end %>
+                        </div>
 
-<% end %> <!-- Close each loop -->
+                      </div>
+                  </div>
+                  
+                  </div>
+              </article>
+            </div>
+            <% end %>
+      </div>
 
-<!-- If post is written give option to delete -->
-<% if @shout.is_author?(@user) %>
-<%= form_for @shout, method: :delete do |f| %>
-<%= f.submit "Delete Post" %>
-<% end %>
-<% end %>
+      <%# add new comment %>
+      <div class="newcomment" id="newcomment">
+           
+                <div class="media-content">
+                  <div class="content">
+                    <%= form_for @shout, url: comment_shout_path(@shout) do |f| %>
+                      <%= f.text_field :text, class: "textarea is-medium is-focused" %>
+                      <%= f.submit "Comment!", class:"button is-link" %>
+                    <% end %> 
+                  </div>
+                </div>
+              
+      </div>
+    </div>
+</div>

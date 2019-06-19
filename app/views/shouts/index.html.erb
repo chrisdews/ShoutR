@@ -24,7 +24,7 @@
                     </div>
                     </p>
                     <p>
-                    <small><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
+                    <small><%= shout.likes.count %> Likes || <%= shout.hates.count %> Hates || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
                     </p>
 
 
@@ -38,6 +38,21 @@
                         <% else %>
                          <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
                           <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                        <% end %>
+
+
+                        <% end %>
+                      </div>
+
+                      <div class="column is-1">
+                        <% if shout.has_hate?(@user) %>
+                            <%= form_for shout, url: unhateindex_shout_path(shout) do |f| %>
+                         <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unhate" %>
+
+                         <% end %>
+                        <% else %>
+                         <%= form_for shout, url: hateindex_shout_path(shout) do |f| %>
+                          <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "hate" %>
                         <% end %>
 
 
@@ -61,6 +76,8 @@
                       <div class="column is-2">
                           <% if shout.likes.count > 2 %>
                             <i class="fas fa-star fa-2x" aria-hidden="true" id="star"></i>
+                          <% elsif shout.hates.count > 2 %>
+                            <i class="fas fa-poo fa-2x" aria-hidden="true" id="poo"></i>
                           <% end %>
                       </div>
 

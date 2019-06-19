@@ -1,10 +1,15 @@
 class Shout < ApplicationRecord
   has_many :likes, as: :likeable, :dependent => :destroy
+  has_many :hates, as: :hateable, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   belongs_to :user
 
   def has_like?(user)  ### Create Module for this
     self.likes.find_by(user_id: user.id)
+  end
+
+  def has_hate?(user)  ### Create Module for this
+    self.hates.find_by(user_id: user.id)
   end
 
   def is_author?(user) ### Create Module for this

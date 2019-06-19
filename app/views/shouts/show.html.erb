@@ -1,5 +1,5 @@
 <div class="columns has-background-primary">
-    <div class="column is-one-half outline is-offset-1">
+    <div class="column is-6 outline is-offset-3">
        <div class="columns title">
         <div class="is-size-3 column has-text-centered has-text-white"><div class="shouttitle"> LOOK at this SHOUT, add a comment.</div>
         </div>
@@ -16,14 +16,14 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                    <strong><%= @shout.user.username %></strong> <small>31m</small>
+                    <strong><%= @shout.user.username %></strong> <small><%= @shout.time_mark %></small>
                     <br>
                     <div class="is-size-3">
                       <%= @shout.text %>
                     </div>
                     </p>
                     <p>
-                    <small><%= @shout.likes.count %> Likes || <%= link_to "#{@shout.comments.count} Comments", @shout %> </small>
+                    <small><%= @shout.likes.count %> Likes || <%= @shout.hates.count %> Hates|| <%= link_to "#{@shout.comments.count} Comments", @shout %> </small>
                     </p>
 
 
@@ -36,6 +36,17 @@
                         <% else %>
                          <%= form_for @shout, url: like_shout_path(@shout) do |f| %>
                           <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                         <% end %>
+                        <% end %> 
+                      </div>
+                      <div class="column is-1">
+                        <% if @shout.has_hate?(@user) %>
+                            <%= form_for @shout, url: unhate_shout_path(@shout) do |f| %>
+                         <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unhate" %>
+                         <% end %>
+                        <% else %>
+                         <%= form_for @shout, url: hate_shout_path(@shout) do |f| %>
+                          <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "hate" %>
                          <% end %>
                         <% end %> 
                       </div>
@@ -52,7 +63,7 @@
 
                       <div class="column is-2">
                           <% if @shout.likes.count > 2 %>
-                            <i class="fas fa-star fa-2x" aria-hidden="true" id="star"></i><span>Popular Post!</span>
+                            <i class="fas fa-star fa-2x" aria-hidden="true" id="star"></i>
                           <% end %>
                       </div>
 
@@ -74,12 +85,12 @@
                   </div>
                   <div class="media-content">
                   <div class="content">
-                      <strong><%= comment.user.username %></strong> <small>31m</small>
+                      <strong><%= comment.user.username %></strong> <small><%= comment.time_mark %></small>
                       <br>
                       <div class="is-size-4">
                         <%= comment.text %>
                       </div>
-                      <%= comment.likes.count %> Likes
+                      <small> <%= comment.likes.count %> Likes || <%=comment.hates.count%> Hates </small>
 
                       <div class="columns">
                         <div class="column is-1">
@@ -90,6 +101,18 @@
                           <% else %>
                               <%= form_for comment, url: like_comment_path(comment) do |f| %>
                                 <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                              <% end %>
+                          <% end %> 
+                        </div>
+
+                        <div class="column is-1">
+                          <% if comment.has_hate?(@user) %>
+                              <%= form_for comment, url: unhate_comment_path(comment) do |f| %>
+                                <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unhate" %>
+                              <% end %>
+                          <% else %>
+                              <%= form_for comment, url: hate_comment_path(comment) do |f| %>
+                                <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "hate" %>
                               <% end %>
                           <% end %> 
                         </div>
@@ -104,8 +127,10 @@
                           <% end %>
                         </div>
                         <div class="column is-1">
-                          <% if comment.likes.count > 1 %>
+                          <% if comment.likes.count > 2 %>
                             <i class="fas fa-star fa-2x" aria-hidden="true" id="star"></i>
+                          <% elsif comment.hates.count > 2 %>
+                            <i class="fas fa-poo fa-2x" aria-hidden="true" id="poo"></i>
                           <% end %>
                         </div>
 
@@ -115,7 +140,7 @@
                   </div>
               </article>
             </div>
-            <% end %>
+           <% end %>
       </div>
 
       <%# add new comment %>

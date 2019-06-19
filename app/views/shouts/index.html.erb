@@ -19,7 +19,9 @@
                     <p>
                     <strong><%= shout.user.username %></strong> <small>31m</small>
                     <br>
-                    <%= shout.text %>
+                    <div class="is-size-3">
+                      <%= shout.text %>
+                    </div>
                     </p>
                     <p>
                     <small><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
@@ -41,9 +43,23 @@
                      
                         <% end %> 
                       </div>
-                      <div class="column is-2 ">
+                      <div class="column is-1 ">
                     
                         <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(shout), id:"comment" %>
+                      </div>
+
+                      <div class="column is-1">
+                        <% if shout.is_author?(@user) %>
+                          <%= form_for shout, method: :delete do |f| %>
+                            <%= f.button'<i class="fas fa-times fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "delete" %>
+                          <% end %>
+                        <% end %>
+                      </div>
+
+                      <div class="column is-2">
+                          <% if shout.likes.count > 2 %>
+                            <i class="fas fa-star fa-2x" aria-hidden="true" id="star"></i>
+                          <% end %>
                       </div>
 
                     </div>
@@ -61,11 +77,11 @@
       </div>
 
 
-      <div class="is-size-3 column is-one-third has-text-centered has-text-white" style="margin-right:5%">
+      <div class="is-size-3 column is-one-third has-text-centered has-text-white">
         <%= form_tag(shouts_path, method: :post) do %>
           <%= hidden_field_tag :user_id, @user.id %>
             <div class="shouttitle">Shout yourself</div>
-            <input type="text" name="text", class='textarea'>
+            <input type="text" name="text", class='textarea is-medium is-focused'>
           <%= submit_tag "Shout!", class:'button is-link' %>
         <% end %>
 

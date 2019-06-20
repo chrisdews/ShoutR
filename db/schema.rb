@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2019_06_19_144139) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string "text"
-    t.integer "shout_id"
-    t.integer "user_id"
+    t.bigint "shout_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shout_id"], name: "index_comments_on_shout_id"
@@ -24,8 +27,8 @@ ActiveRecord::Schema.define(version: 2019_06_19_144139) do
 
   create_table "hates", force: :cascade do |t|
     t.string "hateable_type"
-    t.integer "hateable_id"
-    t.integer "user_id"
+    t.bigint "hateable_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hateable_type", "hateable_id"], name: "index_hates_on_hateable_type_and_hateable_id"
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 2019_06_19_144139) do
 
   create_table "likes", force: :cascade do |t|
     t.string "likeable_type"
-    t.integer "likeable_id"
-    t.integer "user_id"
+    t.bigint "likeable_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_144139) do
 
   create_table "shouts", force: :cascade do |t|
     t.string "text"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_shouts_on_user_id"
@@ -59,4 +62,9 @@ ActiveRecord::Schema.define(version: 2019_06_19_144139) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "shouts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "hates", "users"
+  add_foreign_key "likes", "users"
+  add_foreign_key "shouts", "users"
 end

@@ -16,3 +16,8 @@ end
   Like.create(likeable: Shout.all[rand(0..49)], user_id: rand(1..10))
   Like.create(likeable: Comment.all[rand(0..79)], user_id: rand(1..10))
 end
+
+100.times do
+  Hate.create(hateable: Shout.all[rand(0..49)], user_id: rand(1..10))
+  Hate.create(hateable: Comment.all[rand(0..79)], user_id: rand(1..10))
+end

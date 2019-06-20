@@ -56,6 +56,32 @@ class ShoutsController < ApplicationController
     redirect_to shouts_path(user_filter: params[:user_filter])
   end
 
+  def hate
+    @shout = Shout.find(params[:id])
+    Hate.create(hateable: @shout, user_id: session[:user_id])
+    redirect_to shout_path(@shout)
+  end
+
+  def unhate
+    @shout = Shout.find(params[:id])
+    hate = @shout.hates.find_by(user_id: session[:user_id])
+    hate.destroy
+    redirect_to shout_path(@shout)
+  end
+
+  def hateindex
+    @shout = Shout.find(params[:id])
+    Hate.create(hateable: @shout, user_id: session[:user_id])
+    redirect_to shouts_path
+  end
+
+  def unhateindex
+    @shout = Shout.find(params[:id])
+    hate = @shout.hates.find_by(user_id: session[:user_id])
+    hate.destroy
+    redirect_to shouts_path
+  end
+
   def comment
     @shout = Shout.find(params[:id])
     Comment.create(text: shoutparams["text"], user_id: @user.id, shout_id: @shout.id)

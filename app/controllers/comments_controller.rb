@@ -14,6 +14,19 @@ class CommentsController < ApplicationController
     redirect_to shout_path(@comment.shout)
   end
 
+  def hate
+    @comment = Comment.find(params[:id])
+    Hate.create(hateable: @comment, user_id: session[:user_id])
+    redirect_to shout_path(@comment.shout)
+  end
+
+  def unhate
+    @comment = Comment.find(params[:id])
+    hate = @comment.hates.find_by(user_id: session[:user_id])
+    hate.destroy
+    redirect_to shout_path(@comment.shout)
+  end
+
   def destroy
     @comment = Comment.find(params[:id])
     @shout = @comment.shout

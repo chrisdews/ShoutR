@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hateable: one
+  hateable_type: Hateable
+  user: one
+
+two:
+  hateable: two
+  hateable_type: Hateable
+  user: two

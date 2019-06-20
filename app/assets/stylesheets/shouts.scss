@@ -1,3 +1,72 @@
 // Place all the styles related to the Shouts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#unlike {
+    border-width: 0px;
+    background-color: transparent;
+    color:DeepPink;
+}
+
+#like {
+    border-width: 0px;
+    background-color: transparent;
+    color: #3273dc;
+}
+
+#unhate {
+    border-width: 0px;
+    background-color: transparent;
+    color:black;
+}
+
+#hate {
+    border-width: 0px;
+    background-color: transparent;
+    color: #3273dc;
+}
+
+#delete {
+    border-width: 0px;
+    background-color: transparent;
+    color: red;
+}
+
+#star {
+    border-width: 0px;
+    background-color: transparent;
+    color: gold;
+}
+
+#poo {
+    border-width: 0px;
+    background-color: transparent;
+    color: brown;
+}
+
+.shouttitle {
+    margin: 25px;
+    margin-top: 50px;
+}
+
+.column {
+    
+    margin-left:5%; 
+    margin-right:5%;
+}
+
+.button {
+    margin: 5px;
+}
+
+.commentstyle {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.newcomment{
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+

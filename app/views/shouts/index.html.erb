@@ -1,8 +1,13 @@
 <div>
-    <div class="columns">
-      <div class="column is-three-fifths outline" style="margin: 10px">
+    <div class="columns has-background-primary">
+      <div class="column is-one-half outline is-offset-1">
+       <div class="columns">
+        <div class="is-size-3 column has-text-centered has-text-white"><div class="shouttitle"> OMG Look at all these SHOUTS</div>
+        </div>
+       </div>
+
         <% @shouts.reverse.each do |shout| %>
-          <div class="box">
+          <div class="box has-background-white-ter box-shadow">
             <article class="media">
                 <div class="media-left">
                 <figure class="image is-64x64">
@@ -12,42 +17,76 @@
                 <div class="media-content">
                 <div class="content">
                     <p>
-                    <strong><%= shout.user.username %></strong> <small>31m</small>
+                    <strong><%= shout.user.username %></strong> <small> <%= shout.time_mark %> </small>
                     <br>
-                    <%= shout.text %>
+                    <div class="is-size-3">
+                      <%= shout.text %>
+                    </div>
                     </p>
                     <p>
-                    <small><%= shout.likes.count %> Likes || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
+                    <small><%= shout.likes.count %> Likes || <%= shout.hates.count %> Hates || <%= link_to "#{shout.comments.count} Comments", shout %> </small>
                     </p>
-                    <% if shout.has_like?(@user) %>
-                    <%= form_for shout, url: unlikeindex_shout_path(shout) do |f| %>
-                    <%= f.submit "Unlike" %>
-                    <% end %>
-                    <% else %>
-                    <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
-                    <%= f.submit "Like" %>
-                    <% end %>
-                    <% end %> </h4>
-                </div>
-                <nav class="level is-mobile">
-                    <div class="level-left">
-                    <a class="level-item" aria-label="reply">
-                        <span class="icon is-small">
-                        <i class="fas fa-reply" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                    <a class="level-item" aria-label="retweet">
-                        <span class="icon is-small">
-                        <i class="fas fa-retweet" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                    <a class="level-item" aria-label="like">
-                        <span class="icon is-small">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                        </span>
-                    </a>
+
+
+                    <div class="columns">
+                      <div class="column is-1">
+                        <% if shout.has_like?(@user) %>
+                            <%= form_for shout, url: unlikeindex_shout_path(shout) do |f| %>
+                            <%= hidden_field_tag :user_filter, params[:user_filter] %>
+                         <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
+
+                         <% end %>
+                        <% else %>
+                         <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
+                         <%= hidden_field_tag :user_filter, params[:user_filter] %>
+                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
+                        <% end %>
+
+
+                        <% end %>
+                      </div>
+
+                      <div class="column is-1">
+                        <% if shout.has_hate?(@user) %>
+                            <%= form_for shout, url: unhateindex_shout_path(shout) do |f| %>
+                         <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unhate" %>
+
+                         <% end %>
+                        <% else %>
+                         <%= form_for shout, url: hateindex_shout_path(shout) do |f| %>
+                          <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "hate" %>
+                        <% end %>
+
+
+                        <% end %>
+                      </div>
+
+                      <div class="column is-1 ">
+
+
+                        <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(shout), id:"comment" %>
+                      </div>
+
+                      <div class="column is-1">
+                        <% if shout.is_author?(@user) %>
+                          <%= form_for shout, method: :delete do |f| %>
+                          <%= hidden_field_tag :user_filter, params[:user_filter] %>
+                            <%= f.button'<i class="fas fa-times fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "delete" %>
+                          <% end %>
+                        <% end %>
+                      </div>
+
+                      <div class="column is-2">
+                          <% if shout.likes.count > 2 %>
+                            <i class="fas fa-star fa-2x" aria-hidden="true" id="star"></i>
+                          <% elsif shout.hates.count > 2 %>
+                            <i class="fas fa-poo fa-2x" aria-hidden="true" id="poo"></i>
+                          <% end %>
+                      </div>
+
                     </div>
-                </nav>
+                </div>
+
                 </div>
             </article>
           </div>
@@ -59,13 +98,19 @@
         <% end %>
       </div>
 
-      <div class="column">Top Shouts</div>
-      </div>
-    </div>
 
 
+      <div class="is-size-3 column is-one-third has-text-centered has-text-white">
+        <%= form_tag(shouts_path, method: :post) do %>
+          <%= hidden_field_tag :user_filter, params[:user_filter] %>
+          <%= hidden_field_tag :user_id, @user.id %>
+            <div class="shouttitle">Shout yourself</div>
+            <input type="text" name="text", class='textarea is-medium is-focused'>
+          <%= submit_tag "Shout!", class:'button is-link' %>
+        <% end %>
 
-
-
-
+        <div class="shouttitle">Top Shouts This Week</div>
+     </div>
+    </div> 
+    <%# end of columns %>
 </div>

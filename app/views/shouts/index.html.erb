@@ -49,11 +49,13 @@
                       <div class="column is-1">
                         <% if shout.has_hate?(@user) %>
                             <%= form_for shout, url: unhateindex_shout_path(shout) do |f| %>
+                            <%= hidden_field_tag :user_filter, params[:user_filter] %>
                          <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unhate" %>
 
                          <% end %>
                         <% else %>
                          <%= form_for shout, url: hateindex_shout_path(shout) do |f| %>
+                         <%= hidden_field_tag :user_filter, params[:user_filter] %>
                           <%= f.button'<i class="fas fa-heart-broken fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "hate" %>
                         <% end %>
 
@@ -111,6 +113,6 @@
 
         <div class="shouttitle">Top Shouts This Week</div>
      </div>
-    </div> 
+    </div>
     <%# end of columns %>
 </div>

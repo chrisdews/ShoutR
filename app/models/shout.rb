@@ -37,4 +37,14 @@ class Shout < ApplicationRecord
     end
   end
 
+  def self.most_liked
+    Shout.all.sort_by{|shout| shout.likes.count}.reverse[0..4]
+  end
+
+  def self.most_hated
+    Shout.all.sort_by{|shout| shout.hates.count}.reverse[0..4]
+  end
+
+
+
 end

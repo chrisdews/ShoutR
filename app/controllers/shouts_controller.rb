@@ -72,14 +72,14 @@ class ShoutsController < ApplicationController
   def hateindex
     @shout = Shout.find(params[:id])
     Hate.create(hateable: @shout, user_id: session[:user_id])
-    redirect_to shouts_path
+    redirect_to shouts_path(user_filter: params[:user_filter])
   end
 
   def unhateindex
     @shout = Shout.find(params[:id])
     hate = @shout.hates.find_by(user_id: session[:user_id])
     hate.destroy
-    redirect_to shouts_path
+    redirect_to shouts_path(user_filter: params[:user_filter])
   end
 
   def comment

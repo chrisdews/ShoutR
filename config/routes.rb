@@ -9,16 +9,6 @@ Rails.application.routes.draw do
   get 'sessions/destroy', as: :logout
   get 'signup', to: 'users#new', as: :signup
 
-
-  resources :comments  do
-      patch "like", on: :member
-      patch "unlike", on: :member
-      patch "hate", on: :member
-      patch "unhate", on: :member
-
-
-  end
-
   resources :likes
   resources :hates
 
@@ -35,5 +25,13 @@ Rails.application.routes.draw do
       patch "hateindex", on: :member
       patch "unhateindex", on: :member
   end
+
+  resources :comments  do
+    patch "like", on: :member
+    patch "unlike", on: :member
+    patch "hate", on: :member
+    patch "unhate", on: :member
+  end
+  
   resources :users
 end

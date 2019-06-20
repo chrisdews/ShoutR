@@ -9,7 +9,7 @@ class Comment < ApplicationRecord
   end
 
   def has_hate?(user)  ### Create Module for this
-    self.likes.find_by(user_id: user.id)
+    self.hates.find_by(user_id: user.id)
   end
 
   def is_author?(user)  ### Create Module for this

@@ -32,11 +32,13 @@
                       <div class="column is-1">
                         <% if shout.has_like?(@user) %>
                             <%= form_for shout, url: unlikeindex_shout_path(shout) do |f| %>
+                            <%= hidden_field_tag :user_filter, params[:user_filter] %>
                          <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "unlike" %>
 
                          <% end %>
                         <% else %>
                          <%= form_for shout, url: likeindex_shout_path(shout) do |f| %>
+                         <%= hidden_field_tag :user_filter, params[:user_filter] %>
                           <%= f.button'<i class="fas fa-heart fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "like" %>
                         <% end %>
 
@@ -60,7 +62,7 @@
                       </div>
 
                       <div class="column is-1 ">
-                    
+
 
                         <%= link_to '<i class="fas fa-reply fa-lg"></i>'.html_safe, shout_path(shout), id:"comment" %>
                       </div>
@@ -68,6 +70,7 @@
                       <div class="column is-1">
                         <% if shout.is_author?(@user) %>
                           <%= form_for shout, method: :delete do |f| %>
+                          <%= hidden_field_tag :user_filter, params[:user_filter] %>
                             <%= f.button'<i class="fas fa-times fa-2x" aria-hidden="true"></i>'.html_safe, class: "level-item", id: "delete" %>
                           <% end %>
                         <% end %>
@@ -99,7 +102,7 @@
 
       <div class="is-size-3 column is-one-third has-text-centered has-text-white">
         <%= form_tag(shouts_path, method: :post) do %>
-
+          <%= hidden_field_tag :user_filter, params[:user_filter] %>
           <%= hidden_field_tag :user_id, @user.id %>
             <div class="shouttitle">Shout yourself</div>
             <input type="text" name="text", class='textarea is-medium is-focused'>
@@ -108,7 +111,6 @@
 
         <div class="shouttitle">Top Shouts This Week</div>
      </div>
-
     </div> 
     <%# end of columns %>
 </div>

@@ -21,13 +21,13 @@ class ShoutsController < ApplicationController
   def create
     @shout = Shout.new(text: params.require(:text), user_id: params.require(:user_id))
     @shout.save
-    redirect_to shouts_path
+    redirect_to shouts_path(user_filter: params[:user_filter])
   end
 
   def destroy
     @shout = Shout.find(params[:id])
     @shout.destroy
-    redirect_to "/shouts"
+    redirect_to shouts_path(user_filter: params[:user_filter])
   end
 
   def like
@@ -46,14 +46,14 @@ class ShoutsController < ApplicationController
   def likeindex
     @shout = Shout.find(params[:id])
     Like.create(likeable: @shout, user_id: session[:user_id])
-    redirect_to shouts_path
+    redirect_to shouts_path(user_filter: params[:user_filter])
   end
 
   def unlikeindex
     @shout = Shout.find(params[:id])
     like = @shout.likes.find_by(user_id: session[:user_id])
     like.destroy
-    redirect_to shouts_path
+    redirect_to shouts_path(user_filter: params[:user_filter])
   end
 
   def comment
@@ -61,11 +61,6 @@ class ShoutsController < ApplicationController
     Comment.create(text: shoutparams["text"], user_id: @user.id, shout_id: @shout.id)
     redirect_to shout_path(@shout)
   end
-
-  def destroycomment
-    byebug
-  end
-
 
   private
 
